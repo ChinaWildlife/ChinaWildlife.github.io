@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>梧桐 - 植物百科</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif; background: #f5f5f5; color: #333; line-height: 1.8; font-size: 15px; }
+  .topbar { background: #2d5016; color: #fff; padding: 14px 0; font-size: 13px; }
+  .topbar .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  .topbar a { color: #cde0c0; text-decoration: none; }
+  .topbar a:hover { color: #fff; }
+  .topbar span { color: #8aaa78; margin: 0 6px; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  .main { display: flex; gap: 30px; margin-top: 20px; align-items: flex-start; }
+  .content { flex: 1; min-width: 0; background: #fff; border-radius: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); padding: 30px 35px; }
+  .content h1 { font-size: 28px; font-weight: 600; color: #222; margin-bottom: 2px; }
+  .content h1 small { font-weight: 400; font-size: 18px; color: #666; margin-left: 8px; }
+  .content .sub { color: #999; font-size: 13px; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
+  .content h2 { font-size: 18px; font-weight: 600; color: #2d5016; margin: 28px 0 12px; padding-left: 12px; border-left: 3px solid #4a7c2e; }
+  .content h2:first-of-type { margin-top: 0; }
+  .content h3 { font-size: 15px; font-weight: 600; color: #444; margin: 18px 0 8px; }
+  .content p { margin: 8px 0; text-indent: 2em; text-align: justify; }
+  .content ul { margin: 6px 0 6px 2em; list-style: none; }
+  .content ul li::before { content: "· "; color: #4a7c2e; font-weight: bold; }
+  .content ul li { margin: 3px 0; }
+  .infobox { width: 300px; flex-shrink: 0; background: #fff; border-radius: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); overflow: hidden; }
+  .infobox .title { background: #2d5016; color: #fff; text-align: center; padding: 12px; font-size: 16px; font-weight: 600; letter-spacing: 1px; }
+  .infobox .img-wrap { padding: 12px; background: #fafafa; text-align: center; border-bottom: 1px solid #eee; }
+  .infobox .img-wrap img { max-width: 100%; max-height: 220px; display: block; margin: 0 auto; }
+  .infobox .img-wrap .cap { font-size: 12px; color: #999; margin-top: 6px; }
+  .infobox table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .infobox table th { background: #f4f7f2; padding: 6px 10px; width: 70px; font-weight: 600; color: #444; text-align: right; border-bottom: 1px solid #e8e8e8; font-size: 12px; vertical-align: top; }
+  .infobox table td { padding: 6px 10px; border-bottom: 1px solid #e8e8e8; color: #333; vertical-align: top; }
+  .infobox table tr:last-child th, .infobox table tr:last-child td { border-bottom: none; }
+  .infobox table .sci { font-style: italic; color: #555; }
+  .infobox .tag { display: inline-block; background: #eef6ea; color: #2d5016; font-size: 11px; padding: 1px 8px; border-radius: 8px; margin: 1px 0; }
+  .compare { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 14px; }
+  .compare th { background: #2d5016; color: #fff; padding: 8px 12px; font-weight: 600; font-size: 13px; }
+  .compare th:first-child { text-align: left; }
+  .compare td { padding: 7px 12px; border-bottom: 1px solid #e8e8e8; text-align: center; }
+  .compare td:first-child { font-weight: 600; text-align: left; color: #444; }
+  .compare tr:nth-child(even) td { background: #fafafa; }
+  .compare .chk { color: #4a7c2e; font-weight: bold; }
+  .compare .crs { color: #cc6666; }
+  .footer { max-width: 1100px; margin: 20px auto; padding: 0 20px; }
+  .footer .inner { background: #fff; border-radius: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); padding: 20px 35px; font-size: 13px; color: #999; text-align: center; }
+  @media (max-width: 800px) { .main { flex-direction: column-reverse; } .infobox { width: 100%; } .content { padding: 20px; } .content h1 { font-size: 22px; } .content h1 small { font-size: 15px; } }
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+<a href="#">植物百科</a><span>></span>
+<a href="#">被子植物门</a><span>></span>
+<a href="#">真双子叶植物纲</a><span>></span>
+<a href="#">锦葵科</a><span>></span>
+<a href="#">梧桐属</a><span>></span>
+<strong>梧桐</strong>
+</div></div>
+
+<div class="wrap"><div class="main">
+
+<div class="content">
+
+<h1>梧桐 <small>Firmiana simplex</small></h1>
+<div class="sub">青桐、桐麻、中国梧桐 · 锦葵科梧桐属 · 中国原生梧桐 · 凤凰栖木</div>
+
+<div style="float:right; margin:0 0 12px 20px; width:280px; border:1px solid #eee; border-radius:3px; padding:8px; background:#fafafa; text-align:center;">
+<img src="encyclopedia_images/梧桐.png" style="max-width:100%; max-height:200px;">
+<div style="font-size:12px; color:#999; margin-top:4px;">梧桐植物学插画（AI生成）</div>
+</div>
+
+<h2>形态特征</h2>
+<p>落叶乔木，高达16米。树皮青绿色光滑——这是梧桐最独特的识别特征。叶心形或掌状3-5裂，宽15-30厘米，形如手掌般大小。圆锥花序顶生，花小黄绿色。蓇葖果成熟前开裂成叶状——果瓣如叶片般张开，极为奇特，种子4-5粒着生于果瓣边缘，球形表面有绉纹。梧桐全株青翠，姿态优美。</p>
+
+<h2>分布与生境</h2>
+<p>原产中国，南北各省栽培，长江流域及以南更常见。生于海拔200-1,500米丘陵平原。喜光喜温暖湿润，不耐寒。生长快，对有害气体抗性强。</p>
+
+<h2>分类学</h2>
+<p>梧桐曾归梧桐科(Sterculiaceae)，现分子系统学将其并入锦葵科(Malvaceae)。梧桐属(Firmiana)约20种，分布于亚洲和非洲热带。注意：梧桐（Firmiana）与悬铃木（Platanus，俗称法国梧桐）完全不同！</p>
+
+<h2>形态对比</h2>
+<table class="compare"><tr><th style="width:60px">性状</th><th>梧桐(中国梧桐)</th><th>悬铃木(法国梧桐)</th></tr>
+<tr><td>树皮</td><td class="chk">青绿色光滑</td><td class="crs">灰褐色斑驳脱落</td></tr>
+<tr><td>叶裂</td><td class="chk">3-5裂</td><td class="crs">5-7裂</td></tr>
+<tr><td>果实</td><td class="chk">蓇葖果叶状裂</td><td class="crs">球形聚合果</td></tr>
+<tr><td>科</td><td class="chk">锦葵科</td><td class="crs">悬铃木科</td></tr></table>
+
+<h2>生态与文化</h2>
+<p>生长快，枝干青翠树形优美。对二氧化硫和氯气抗性强。树皮纤维可造纸。种子可榨油。"梧桐引凤"为中国传统文化经典意象。</p>
+
+<h2>利用价值</h2>
+<p>木材白色轻软可制古琴。"梧桐引凤"为经典文化意象。象征高洁品格。古人认为梧桐知秋立秋，为传统庭院名木。</p>
+
+</div>
+
+<div class="infobox">
+<div class="title">梧桐</div>
+<div class="img-wrap">
+<img src="encyclopedia_images/梧桐.png" alt="梧桐">
+<div class="cap">梧桐 · Firmiana simplex</div>
+</div>
+<table>
+<tr><th>界</th><td>植物界 <span class="sci">Plantae</span></td></tr>
+<tr><th>门</th><td>被子植物门 <span class="sci">Angiospermae</span></td></tr>
+<tr><th>科</th><td>锦葵科 <span class="sci">Malvaceae</span></td></tr>
+<tr><th>属</th><td>梧桐属 <span class="sci">Firmiana</span></td></tr>
+<tr><th>种</th><td><strong>梧桐</strong> <span class="sci">Firmiana simplex</span></td></tr>
+<tr><th>学名</th><td><span class="sci">Firmiana simplex</span></td></tr>
+<tr><th>英名</th><td>Chinese parasol tree / Phoenix tree</td></tr>
+<tr><th>别名</th><td>青桐、桐麻、中国梧桐</td></tr>
+<tr><th>生活型</th><td>落叶乔木</td></tr>
+<tr><th>株高</th><td>10–16 m</td></tr>
+<tr><th>花期</th><td>6–7月 · 黄绿色</td></tr>
+<tr><th>果期</th><td>8–10月 · 蓇葖果</td></tr>
+<tr><th>海拔</th><td>200–1,500 m</td></tr>
+<tr><th>分布</th><td>原产中国，南北各省栽培</td></tr>
+<tr><th>染色体</th><td>2n = 40</td></tr>
+<tr><th>标签</th><td><span class="tag">中国原生梧桐 · 凤凰栖木</span></td></tr>
+</table>
+</div>
+
+</div></div>
+
+<div class="footer"><div class="inner">
+被子植物门(1) → 真双子叶植物纲(1) → 锦葵目(1) → 锦葵科(1) → 梧桐属(1) → 梧桐(1)
+</div></div>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>国槐 - 植物百科</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif; background: #f5f5f5; color: #333; line-height: 1.8; font-size: 15px; }
+  .topbar { background: #2d5016; color: #fff; padding: 14px 0; font-size: 13px; }
+  .topbar .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  .topbar a { color: #cde0c0; text-decoration: none; }
+  .topbar a:hover { color: #fff; }
+  .topbar span { color: #8aaa78; margin: 0 6px; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  .main { display: flex; gap: 30px; margin-top: 20px; align-items: flex-start; }
+  .content { flex: 1; min-width: 0; background: #fff; border-radius: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); padding: 30px 35px; }
+  .content h1 { font-size: 28px; font-weight: 600; color: #222; margin-bottom: 2px; }
+  .content h1 small { font-weight: 400; font-size: 18px; color: #666; margin-left: 8px; }
+  .content .sub { color: #999; font-size: 13px; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
+  .content h2 { font-size: 18px; font-weight: 600; color: #2d5016; margin: 28px 0 12px; padding-left: 12px; border-left: 3px solid #4a7c2e; }
+  .content h2:first-of-type { margin-top: 0; }
+  .content h3 { font-size: 15px; font-weight: 600; color: #444; margin: 18px 0 8px; }
+  .content p { margin: 8px 0; text-indent: 2em; text-align: justify; }
+  .content ul { margin: 6px 0 6px 2em; list-style: none; }
+  .content ul li::before { content: "· "; color: #4a7c2e; font-weight: bold; }
+  .content ul li { margin: 3px 0; }
+  .infobox { width: 300px; flex-shrink: 0; background: #fff; border-radius: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); overflow: hidden; }
+  .infobox .title { background: #2d5016; color: #fff; text-align: center; padding: 12px; font-size: 16px; font-weight: 600; letter-spacing: 1px; }
+  .infobox .img-wrap { padding: 12px; background: #fafafa; text-align: center; border-bottom: 1px solid #eee; }
+  .infobox .img-wrap img { max-width: 100%; max-height: 220px; display: block; margin: 0 auto; }
+  .infobox .img-wrap .cap { font-size: 12px; color: #999; margin-top: 6px; }
+  .infobox table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .infobox table th { background: #f4f7f2; padding: 6px 10px; width: 70px; font-weight: 600; color: #444; text-align: right; border-bottom: 1px solid #e8e8e8; font-size: 12px; vertical-align: top; }
+  .infobox table td { padding: 6px 10px; border-bottom: 1px solid #e8e8e8; color: #333; vertical-align: top; }
+  .infobox table tr:last-child th, .infobox table tr:last-child td { border-bottom: none; }
+  .infobox table .sci { font-style: italic; color: #555; }
+  .infobox .tag { display: inline-block; background: #eef6ea; color: #2d5016; font-size: 11px; padding: 1px 8px; border-radius: 8px; margin: 1px 0; }
+  .compare { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 14px; }
+  .compare th { background: #2d5016; color: #fff; padding: 8px 12px; font-weight: 600; font-size: 13px; }
+  .compare th:first-child { text-align: left; }
+  .compare td { padding: 7px 12px; border-bottom: 1px solid #e8e8e8; text-align: center; }
+  .compare td:first-child { font-weight: 600; text-align: left; color: #444; }
+  .compare tr:nth-child(even) td { background: #fafafa; }
+  .compare .chk { color: #4a7c2e; font-weight: bold; }
+  .compare .crs { color: #cc6666; }
+  .footer { max-width: 1100px; margin: 20px auto; padding: 0 20px; }
+  .footer .inner { background: #fff; border-radius: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); padding: 20px 35px; font-size: 13px; color: #999; text-align: center; }
+  @media (max-width: 800px) { .main { flex-direction: column-reverse; } .infobox { width: 100%; } .content { padding: 20px; } .content h1 { font-size: 22px; } .content h1 small { font-size: 15px; } }
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+<a href="#">植物百科</a><span>></span>
+<a href="#">被子植物门</a><span>></span>
+<a href="#">真双子叶植物纲</a><span>></span>
+<a href="#">豆科</a><span>></span>
+<a href="#">槐属</a><span>></span>
+<strong>国槐</strong>
+</div></div>
+
+<div class="wrap"><div class="main">
+
+<div class="content">
+
+<h1>国槐 <small>Styphnolobium japonicum</small></h1>
+<div class="sub">槐树、家槐、黑槐、金药树 · 豆科槐属 · 北京市树 · 吉祥树</div>
+
+<div style="float:right; margin:0 0 12px 20px; width:280px; border:1px solid #eee; border-radius:3px; padding:8px; background:#fafafa; text-align:center;">
+<img src="encyclopedia_images/国槐.png" style="max-width:100%; max-height:200px;">
+<div style="font-size:12px; color:#999; margin-top:4px;">国槐植物学插画（AI生成）</div>
+</div>
+
+<h2>形态特征</h2>
+<p>落叶乔木，高达25米。树皮灰褐色纵裂。奇数羽状复叶，小叶7-17枚，卵状披针形，全缘。圆锥花序顶生呈金字塔形，花冠白色至淡黄色，旗瓣近圆形有紫色脉纹。荚果串珠状肉质不裂，内含种子1-6粒。国槐树荫浓密，自古即为重要的行道树和庭荫树。</p>
+
+<h2>分布与生境</h2>
+<p>原产中国北部，南北各省广泛栽培，华北和黄土高原最为常见。适应性强，不择土壤，喜光稍耐阴，深根抗旱。抗多种有害气体，为城市绿化的优选树种，寿命极长达800-1,000年。</p>
+
+<h2>分类学</h2>
+<p>国槐曾归槐属(Sophora)，现分子系统学将其独立为Styphnolobium属。与刺槐（Robinia pseudoacacia）不同属——刺槐原产北美，具托叶刺。国槐自秦汉起已有夹路植槐的记载，为中华传统树种。</p>
+
+<h2>形态对比</h2>
+<table class="compare"><tr><th style="width:60px">性状</th><th>国槐</th><th>刺槐（洋槐）</th></tr>
+<tr><td>托叶刺</td><td class="chk">无</td><td class="crs">有</td></tr>
+<tr><td>荚果</td><td class="chk">肉质念珠状不裂</td><td class="crs">扁平开裂</td></tr>
+<tr><td>花期</td><td class="chk">7–8月</td><td class="crs">4–5月</td></tr>
+<tr><td>原产地</td><td class="chk">中国</td><td class="crs">北美</td></tr></table>
+
+<h2>生态与文化</h2>
+<p>生长缓慢但寿命极长，深根性。根部无根瘤菌。抗污染能力强。山西洪洞大槐树是明代移民的历史象征。</p>
+
+<h2>利用价值</h2>
+<p>木材富弹性耐水湿，可供建筑枕木。花蕾可作染料，果肉入药（槐角）。夏秋可观花，为优良蜜源植物。北京景山崇祯自缢处即为一棵古槐。</p>
+
+</div>
+
+<div class="infobox">
+<div class="title">国槐</div>
+<div class="img-wrap">
+<img src="encyclopedia_images/国槐_实拍.jpg" alt="国槐">
+<div class="cap">国槐 · Styphnolobium japonicum</div>
+</div>
+<table>
+<tr><th>界</th><td>植物界 <span class="sci">Plantae</span></td></tr>
+<tr><th>门</th><td>被子植物门 <span class="sci">Angiospermae</span></td></tr>
+<tr><th>科</th><td>豆科 <span class="sci">Fabaceae</span></td></tr>
+<tr><th>属</th><td>槐属 <span class="sci">Styphnolobium</span></td></tr>
+<tr><th>种</th><td><strong>国槐</strong> <span class="sci">Styphnolobium japonicum</span></td></tr>
+<tr><th>学名</th><td><span class="sci">Styphnolobium japonicum</span></td></tr>
+<tr><th>英名</th><td>Chinese scholar tree</td></tr>
+<tr><th>别名</th><td>槐树、家槐、黑槐、金药树</td></tr>
+<tr><th>生活型</th><td>落叶乔木</td></tr>
+<tr><th>株高</th><td>15–25 m</td></tr>
+<tr><th>花期</th><td>7–8月 · 黄白色·芳香</td></tr>
+<tr><th>果期</th><td>8–10月 · 荚果念珠状</td></tr>
+<tr><th>海拔</th><td>平原–1,500 m</td></tr>
+<tr><th>分布</th><td>原产中国北部，南北广泛栽培</td></tr>
+<tr><th>染色体</th><td>2n = 28</td></tr>
+<tr><th>标签</th><td><span class="tag">北京市树 · 吉祥树</span></td></tr>
+</table>
+</div>
+
+</div></div>
+
+<div class="footer"><div class="inner">
+被子植物门(1) → 真双子叶植物纲(1) → 豆目(1) → 豆科(1) → 槐属(1) → 国槐(1)
+</div></div>
+
+</body>
+</html>

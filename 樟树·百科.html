@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>樟树 - 植物百科</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif; background: #f5f5f5; color: #333; line-height: 1.8; font-size: 15px; }
+  .topbar { background: #2d5016; color: #fff; padding: 14px 0; font-size: 13px; }
+  .topbar .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  .topbar a { color: #cde0c0; text-decoration: none; }
+  .topbar a:hover { color: #fff; }
+  .topbar span { color: #8aaa78; margin: 0 6px; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  .main { display: flex; gap: 30px; margin-top: 20px; align-items: flex-start; }
+  .content { flex: 1; min-width: 0; background: #fff; border-radius: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); padding: 30px 35px; }
+  .content h1 { font-size: 28px; font-weight: 600; color: #222; margin-bottom: 2px; }
+  .content h1 small { font-weight: 400; font-size: 18px; color: #666; margin-left: 8px; }
+  .content .sub { color: #999; font-size: 13px; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
+  .content h2 { font-size: 18px; font-weight: 600; color: #2d5016; margin: 28px 0 12px; padding-left: 12px; border-left: 3px solid #4a7c2e; }
+  .content h2:first-of-type { margin-top: 0; }
+  .content h3 { font-size: 15px; font-weight: 600; color: #444; margin: 18px 0 8px; }
+  .content p { margin: 8px 0; text-indent: 2em; text-align: justify; }
+  .content ul { margin: 6px 0 6px 2em; list-style: none; }
+  .content ul li::before { content: "· "; color: #4a7c2e; font-weight: bold; }
+  .content ul li { margin: 3px 0; }
+  .infobox { width: 300px; flex-shrink: 0; background: #fff; border-radius: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); overflow: hidden; }
+  .infobox .title { background: #2d5016; color: #fff; text-align: center; padding: 12px; font-size: 16px; font-weight: 600; letter-spacing: 1px; }
+  .infobox .img-wrap { padding: 12px; background: #fafafa; text-align: center; border-bottom: 1px solid #eee; }
+  .infobox .img-wrap img { max-width: 100%; max-height: 220px; display: block; margin: 0 auto; }
+  .infobox .img-wrap .cap { font-size: 12px; color: #999; margin-top: 6px; }
+  .infobox table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .infobox table th { background: #f4f7f2; padding: 6px 10px; width: 70px; font-weight: 600; color: #444; text-align: right; border-bottom: 1px solid #e8e8e8; font-size: 12px; vertical-align: top; }
+  .infobox table td { padding: 6px 10px; border-bottom: 1px solid #e8e8e8; color: #333; vertical-align: top; }
+  .infobox table tr:last-child th, .infobox table tr:last-child td { border-bottom: none; }
+  .infobox table .sci { font-style: italic; color: #555; }
+  .infobox .tag { display: inline-block; background: #eef6ea; color: #2d5016; font-size: 11px; padding: 1px 8px; border-radius: 8px; margin: 1px 0; }
+  .compare { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 14px; }
+  .compare th { background: #2d5016; color: #fff; padding: 8px 12px; font-weight: 600; font-size: 13px; }
+  .compare th:first-child { text-align: left; }
+  .compare td { padding: 7px 12px; border-bottom: 1px solid #e8e8e8; text-align: center; }
+  .compare td:first-child { font-weight: 600; text-align: left; color: #444; }
+  .compare tr:nth-child(even) td { background: #fafafa; }
+  .compare .chk { color: #4a7c2e; font-weight: bold; }
+  .compare .crs { color: #cc6666; }
+  .footer { max-width: 1100px; margin: 20px auto; padding: 0 20px; }
+  .footer .inner { background: #fff; border-radius: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); padding: 20px 35px; font-size: 13px; color: #999; text-align: center; }
+  @media (max-width: 800px) { .main { flex-direction: column-reverse; } .infobox { width: 100%; } .content { padding: 20px; } .content h1 { font-size: 22px; } .content h1 small { font-size: 15px; } }
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+<a href="#">植物百科</a><span>></span>
+<a href="#">被子植物门</a><span>></span>
+<a href="#">木兰类</a><span>></span>
+<a href="#">樟科</a><span>></span>
+<a href="#">樟属</a><span>></span>
+<strong>樟树</strong>
+</div></div>
+
+<div class="wrap"><div class="main">
+
+<div class="content">
+
+<h1>樟树 <small>Cinnamomum camphora</small></h1>
+<div class="sub">香樟、樟木、芳樟、乌樟 · 樟科樟属 · 南方市树 · 全株芳香</div>
+
+<div style="float:right; margin:0 0 12px 20px; width:280px; border:1px solid #eee; border-radius:3px; padding:8px; background:#fafafa; text-align:center;">
+<img src="encyclopedia_images/樟树.png" style="max-width:100%; max-height:200px;">
+<div style="font-size:12px; color:#999; margin-top:4px;">樟树植物学插画（AI生成）</div>
+</div>
+
+<h2>形态特征</h2>
+<p>常绿大乔木，高达30米，胸径可达5米。树皮幼时绿色平滑，老时黄褐色纵裂。叶互生卵状椭圆形，长6-12厘米，离基三出脉——这是樟属植物的关键识别特征，脉腋有明显腺点。叶片揉碎后有强烈樟脑香气。圆锥花序腋生，花小黄绿色。核果球形，成熟时紫黑色。</p>
+
+<h2>分布与生境</h2>
+<p>分布于长江以南各省区，以台湾、福建、江西、湖南、广东为多。生于海拔200-1,800米低山平原。喜光稍耐阴，喜温暖湿润气候，不耐寒。深根性，抗风能力强。</p>
+
+<h2>分类学</h2>
+<p>樟属(Cinnamomum)约有350种，分布于亚洲和美洲热带地区。樟树是中国南方最具代表性的常绿阔叶树之一，其学名"camphora"即指樟脑。樟树与同属天竺桂的区别在于离基三出脉明显且脉腋有腺点。</p>
+
+<h2>形态对比</h2>
+<table class="compare"><tr><th style="width:60px">性状</th><th>樟树</th><th>天竺桂</th></tr>
+<tr><td>叶脉</td><td class="chk">离基三出脉明显</td><td class="crs">三出脉不明显</td></tr>
+<tr><td>脉腋腺点</td><td class="chk">有</td><td class="crs">无</td></tr>
+<tr><td>樟脑味</td><td class="chk">浓烈</td><td class="crs">淡</td></tr>
+<tr><td>树皮</td><td class="chk">幼绿老褐纵裂</td><td class="crs">灰褐色平滑</td></tr></table>
+
+<h2>生态与文化</h2>
+<p>深根性，抗风能力强。寿命可达千年以上。全株含挥发性樟脑油，对昆虫有驱避作用。"樟"与"章"同音，寓意文章昌盛，常植于书院文庙。</p>
+
+<h2>利用价值</h2>
+<p>木材耐腐防虫，可作家具箱柜。枝叶可提制樟脑、樟油。为优良风景树和行道树。杭州、南昌等城市以樟为市树。</p>
+
+</div>
+
+<div class="infobox">
+<div class="title">樟树</div>
+<div class="img-wrap">
+<img src="encyclopedia_images/樟树_实拍.jpg" alt="樟树">
+<div class="cap">樟树 · Cinnamomum camphora</div>
+</div>
+<table>
+<tr><th>界</th><td>植物界 <span class="sci">Plantae</span></td></tr>
+<tr><th>门</th><td>被子植物门 <span class="sci">Angiospermae</span></td></tr>
+<tr><th>科</th><td>樟科 <span class="sci">Lauraceae</span></td></tr>
+<tr><th>属</th><td>樟属 <span class="sci">Cinnamomum</span></td></tr>
+<tr><th>种</th><td><strong>樟树</strong> <span class="sci">Cinnamomum camphora</span></td></tr>
+<tr><th>学名</th><td><span class="sci">Cinnamomum camphora</span></td></tr>
+<tr><th>英名</th><td>Camphor tree</td></tr>
+<tr><th>别名</th><td>香樟、樟木、芳樟、乌樟</td></tr>
+<tr><th>生活型</th><td>常绿大乔木</td></tr>
+<tr><th>株高</th><td>15–30 m</td></tr>
+<tr><th>花期</th><td>4–5月 · 黄绿色</td></tr>
+<tr><th>果期</th><td>8–11月 · 核果紫黑色</td></tr>
+<tr><th>海拔</th><td>200–1,800 m</td></tr>
+<tr><th>分布</th><td>长江以南广泛分布</td></tr>
+<tr><th>染色体</th><td>2n = 24</td></tr>
+<tr><th>标签</th><td><span class="tag">南方市树 · 全株芳香</span></td></tr>
+</table>
+</div>
+
+</div></div>
+
+<div class="footer"><div class="inner">
+被子植物门(1) → 木兰类(1) → 樟目(1) → 樟科(1) → 樟属(1) → 樟树(1)
+</div></div>
+
+</body>
+</html>

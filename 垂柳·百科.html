@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>垂柳 - 植物百科</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif; background: #f5f5f5; color: #333; line-height: 1.8; font-size: 15px; }
+  .topbar { background: #2d5016; color: #fff; padding: 14px 0; font-size: 13px; }
+  .topbar .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  .topbar a { color: #cde0c0; text-decoration: none; }
+  .topbar a:hover { color: #fff; }
+  .topbar span { color: #8aaa78; margin: 0 6px; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  .main { display: flex; gap: 30px; margin-top: 20px; align-items: flex-start; }
+  .content { flex: 1; min-width: 0; background: #fff; border-radius: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); padding: 30px 35px; }
+  .content h1 { font-size: 28px; font-weight: 600; color: #222; margin-bottom: 2px; }
+  .content h1 small { font-weight: 400; font-size: 18px; color: #666; margin-left: 8px; }
+  .content .sub { color: #999; font-size: 13px; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
+  .content h2 { font-size: 18px; font-weight: 600; color: #2d5016; margin: 28px 0 12px; padding-left: 12px; border-left: 3px solid #4a7c2e; }
+  .content h2:first-of-type { margin-top: 0; }
+  .content h3 { font-size: 15px; font-weight: 600; color: #444; margin: 18px 0 8px; }
+  .content p { margin: 8px 0; text-indent: 2em; text-align: justify; }
+  .content ul { margin: 6px 0 6px 2em; list-style: none; }
+  .content ul li::before { content: "· "; color: #4a7c2e; font-weight: bold; }
+  .content ul li { margin: 3px 0; }
+  .infobox { width: 300px; flex-shrink: 0; background: #fff; border-radius: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); overflow: hidden; }
+  .infobox .title { background: #2d5016; color: #fff; text-align: center; padding: 12px; font-size: 16px; font-weight: 600; letter-spacing: 1px; }
+  .infobox .img-wrap { padding: 12px; background: #fafafa; text-align: center; border-bottom: 1px solid #eee; }
+  .infobox .img-wrap img { max-width: 100%; max-height: 220px; display: block; margin: 0 auto; }
+  .infobox .img-wrap .cap { font-size: 12px; color: #999; margin-top: 6px; }
+  .infobox table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .infobox table th { background: #f4f7f2; padding: 6px 10px; width: 70px; font-weight: 600; color: #444; text-align: right; border-bottom: 1px solid #e8e8e8; font-size: 12px; vertical-align: top; }
+  .infobox table td { padding: 6px 10px; border-bottom: 1px solid #e8e8e8; color: #333; vertical-align: top; }
+  .infobox table tr:last-child th, .infobox table tr:last-child td { border-bottom: none; }
+  .infobox table .sci { font-style: italic; color: #555; }
+  .infobox .tag { display: inline-block; background: #eef6ea; color: #2d5016; font-size: 11px; padding: 1px 8px; border-radius: 8px; margin: 1px 0; }
+  .compare { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 14px; }
+  .compare th { background: #2d5016; color: #fff; padding: 8px 12px; font-weight: 600; font-size: 13px; }
+  .compare th:first-child { text-align: left; }
+  .compare td { padding: 7px 12px; border-bottom: 1px solid #e8e8e8; text-align: center; }
+  .compare td:first-child { font-weight: 600; text-align: left; color: #444; }
+  .compare tr:nth-child(even) td { background: #fafafa; }
+  .compare .chk { color: #4a7c2e; font-weight: bold; }
+  .compare .crs { color: #cc6666; }
+  .footer { max-width: 1100px; margin: 20px auto; padding: 0 20px; }
+  .footer .inner { background: #fff; border-radius: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); padding: 20px 35px; font-size: 13px; color: #999; text-align: center; }
+  @media (max-width: 800px) { .main { flex-direction: column-reverse; } .infobox { width: 100%; } .content { padding: 20px; } .content h1 { font-size: 22px; } .content h1 small { font-size: 15px; } }
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+<a href="#">植物百科</a><span>></span>
+<a href="#">被子植物门</a><span>></span>
+<a href="#">真双子叶植物纲</a><span>></span>
+<a href="#">杨柳科</a><span>></span>
+<a href="#">柳属</a><span>></span>
+<strong>垂柳</strong>
+</div></div>
+
+<div class="wrap"><div class="main">
+
+<div class="content">
+
+<h1>垂柳 <small>Salix babylonica</small></h1>
+<div class="sub">垂丝柳、垂杨柳、倒栽柳、水柳 · 杨柳科柳属 · 水边之树 · 诗词名木</div>
+
+<div style="float:right; margin:0 0 12px 20px; width:280px; border:1px solid #eee; border-radius:3px; padding:8px; background:#fafafa; text-align:center;">
+<img src="encyclopedia_images/垂柳.png" style="max-width:100%; max-height:200px;">
+<div style="font-size:12px; color:#999; margin-top:4px;">垂柳植物学插画（AI生成）</div>
+</div>
+
+<h2>形态特征</h2>
+<p>落叶乔木，高达18米。树冠开展疏散，最显著的特征是枝条细长下垂——这也是"垂柳"之名的由来。叶狭披针形，长8-16厘米，先端长渐尖，边缘有细锯齿。柔荑花序先叶开放或与叶同放。蒴果2裂，种子有白色丝状绒毛，即"柳絮"。垂柳姿态优美，为江南水乡的标志性树种。</p>
+
+<h2>分布与生境</h2>
+<p>原产中国长江流域，现全国广泛栽培，以江南水乡最为常见。多生于水边湿地。喜光喜温暖湿润，耐水湿不耐干旱。为春季最早发芽的树种之一。</p>
+
+<h2>分类学</h2>
+<p>学名"babylonica"意为"巴比伦的"，源于《圣经·诗篇》137篇中巴比伦河畔的柳树——实际上垂柳原产中国而非巴比伦。柳属(Salix)约500种，主要分布于北温带。</p>
+
+<h2>形态对比</h2>
+<table class="compare"><tr><th style="width:60px">性状</th><th>垂柳</th><th>旱柳</th></tr>
+<tr><td>枝条</td><td class="chk">细长下垂</td><td class="crs">斜展不下垂</td></tr>
+<tr><td>叶形</td><td class="chk">狭披针形</td><td class="crs">披针形</td></tr>
+<tr><td>生境</td><td class="chk">水边湿地</td><td class="crs">较干旱处</td></tr>
+<tr><td>分布</td><td class="chk">南方为主</td><td class="crs">北方为主</td></tr></table>
+
+<h2>生态与文化</h2>
+<p>生长快，寿命约30-50年。萌芽力强耐修剪。"柳絮"为种子附生白色绒毛。对二氧化硫等污染物敏感，为环境指示植物。枝条细长下垂随风飘舞极为优美。</p>
+
+<h2>利用价值</h2>
+<p>枝条可用于编织。"折柳送别"为经典文化意象。"碧玉妆成一树高，万条垂下绿丝绦"为传世名句。</p>
+
+</div>
+
+<div class="infobox">
+<div class="title">垂柳</div>
+<div class="img-wrap">
+<img src="encyclopedia_images/垂柳.png" alt="垂柳">
+<div class="cap">垂柳 · Salix babylonica</div>
+</div>
+<table>
+<tr><th>界</th><td>植物界 <span class="sci">Plantae</span></td></tr>
+<tr><th>门</th><td>被子植物门 <span class="sci">Angiospermae</span></td></tr>
+<tr><th>科</th><td>杨柳科 <span class="sci">Salicaceae</span></td></tr>
+<tr><th>属</th><td>柳属 <span class="sci">Salix</span></td></tr>
+<tr><th>种</th><td><strong>垂柳</strong> <span class="sci">Salix babylonica</span></td></tr>
+<tr><th>学名</th><td><span class="sci">Salix babylonica</span></td></tr>
+<tr><th>英名</th><td>Weeping willow / Babylon willow</td></tr>
+<tr><th>别名</th><td>垂丝柳、垂杨柳、倒栽柳、水柳</td></tr>
+<tr><th>生活型</th><td>落叶乔木</td></tr>
+<tr><th>株高</th><td>10–18 m</td></tr>
+<tr><th>花期</th><td>3–4月 · 柔荑花序</td></tr>
+<tr><th>果期</th><td>4–5月 · 蒴果</td></tr>
+<tr><th>海拔</th><td>平原–1,200 m</td></tr>
+<tr><th>分布</th><td>原产中国，全国广泛栽培</td></tr>
+<tr><th>染色体</th><td>2n = 76</td></tr>
+<tr><th>标签</th><td><span class="tag">水边之树 · 诗词名木</span></td></tr>
+</table>
+</div>
+
+</div></div>
+
+<div class="footer"><div class="inner">
+被子植物门(1) → 真双子叶植物纲(1) → 金虎尾目(1) → 杨柳科(1) → 柳属(1) → 垂柳(1)
+</div></div>
+
+</body>
+</html>
