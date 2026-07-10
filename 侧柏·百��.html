@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>侧柏 - 植物百科</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif; background: #f5f5f5; color: #333; line-height: 1.8; font-size: 15px; }
+  .topbar { background: #2d5016; color: #fff; padding: 14px 0; font-size: 13px; }
+  .topbar .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  .topbar a { color: #cde0c0; text-decoration: none; }
+  .topbar a:hover { color: #fff; }
+  .topbar span { color: #8aaa78; margin: 0 6px; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  .main { display: flex; gap: 30px; margin-top: 20px; align-items: flex-start; }
+  .content { flex: 1; min-width: 0; background: #fff; border-radius: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); padding: 30px 35px; }
+  .content h1 { font-size: 28px; font-weight: 600; color: #222; margin-bottom: 2px; }
+  .content h1 small { font-weight: 400; font-size: 18px; color: #666; margin-left: 8px; }
+  .content .sub { color: #999; font-size: 13px; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
+  .content h2 { font-size: 18px; font-weight: 600; color: #2d5016; margin: 28px 0 12px; padding-left: 12px; border-left: 3px solid #4a7c2e; }
+  .content h2:first-of-type { margin-top: 0; }
+  .content h3 { font-size: 15px; font-weight: 600; color: #444; margin: 18px 0 8px; }
+  .content p { margin: 8px 0; text-indent: 2em; text-align: justify; }
+  .content ul { margin: 6px 0 6px 2em; list-style: none; }
+  .content ul li::before { content: "· "; color: #4a7c2e; font-weight: bold; }
+  .content ul li { margin: 3px 0; }
+  .infobox { width: 300px; flex-shrink: 0; background: #fff; border-radius: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); overflow: hidden; }
+  .infobox .title { background: #2d5016; color: #fff; text-align: center; padding: 12px; font-size: 16px; font-weight: 600; letter-spacing: 1px; }
+  .infobox .img-wrap { padding: 12px; background: #fafafa; text-align: center; border-bottom: 1px solid #eee; }
+  .infobox .img-wrap img { max-width: 100%; max-height: 220px; display: block; margin: 0 auto; }
+  .infobox .img-wrap .cap { font-size: 12px; color: #999; margin-top: 6px; }
+  .infobox table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .infobox table th { background: #f4f7f2; padding: 6px 10px; width: 70px; font-weight: 600; color: #444; text-align: right; border-bottom: 1px solid #e8e8e8; font-size: 12px; vertical-align: top; }
+  .infobox table td { padding: 6px 10px; border-bottom: 1px solid #e8e8e8; color: #333; vertical-align: top; }
+  .infobox table tr:last-child th, .infobox table tr:last-child td { border-bottom: none; }
+  .infobox table .sci { font-style: italic; color: #555; }
+  .infobox .tag { display: inline-block; background: #eef6ea; color: #2d5016; font-size: 11px; padding: 1px 8px; border-radius: 8px; margin: 1px 0; }
+  .compare { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 14px; }
+  .compare th { background: #2d5016; color: #fff; padding: 8px 12px; font-weight: 600; font-size: 13px; }
+  .compare th:first-child { text-align: left; }
+  .compare td { padding: 7px 12px; border-bottom: 1px solid #e8e8e8; text-align: center; }
+  .compare td:first-child { font-weight: 600; text-align: left; color: #444; }
+  .compare tr:nth-child(even) td { background: #fafafa; }
+  .compare .chk { color: #4a7c2e; font-weight: bold; }
+  .compare .crs { color: #cc6666; }
+  .footer { max-width: 1100px; margin: 20px auto; padding: 0 20px; }
+  .footer .inner { background: #fff; border-radius: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); padding: 20px 35px; font-size: 13px; color: #999; text-align: center; }
+  @media (max-width: 800px) { .main { flex-direction: column-reverse; } .infobox { width: 100%; } .content { padding: 20px; } .content h1 { font-size: 22px; } .content h1 small { font-size: 15px; } }
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+<a href="#">植物百科</a><span>></span>
+<a href="#">裸子植物门</a><span>></span>
+<a href="#">松纲</a><span>></span>
+<a href="#">柏科</a><span>></span>
+<a href="#">侧柏属</a><span>></span>
+<strong>侧柏</strong>
+</div></div>
+
+<div class="wrap"><div class="main">
+
+<div class="content">
+
+<h1>侧柏 <small>Platycladus orientalis</small></h1>
+<div class="sub">扁柏、香柏、黄柏、香树 · 柏科侧柏属 · 百木之长 · 长寿树</div>
+
+<div style="float:right; margin:0 0 12px 20px; width:280px; border:1px solid #eee; border-radius:3px; padding:8px; background:#fafafa; text-align:center;">
+<img src="encyclopedia_images/侧柏.png" style="max-width:100%; max-height:200px;">
+<div style="font-size:12px; color:#999; margin-top:4px;">侧柏植物学插画（AI生成）</div>
+</div>
+
+<h2>形态特征</h2>
+<p>常绿乔木，高达20米，胸径1米。幼树树冠尖塔形，老树广圆形。树皮浅褐色条片状纵裂。叶全为鳞片状交互对生，排成一平面，小枝扁平——观之如绿色扇面。球果卵圆形，长1.5-2.5厘米，成熟前蓝绿色被白粉，熟后红褐色木质化开裂。种子长卵形无翅。</p>
+
+<h2>分布与生境</h2>
+<p>分布极为广泛，除青海、新疆外全国各地均有，黄河及淮河流域为集中分布区。朝鲜亦有分布。生于海拔150-3,300米的平原、丘陵和山地。喜光，极耐干旱瘠薄，可生长于陡坡石缝中。</p>
+
+<h2>分类学</h2>
+<p>侧柏属(Platycladus)为单种属，仅侧柏一种。曾归崖柏属(Thuja)，后因形态差异独立成属。侧柏是中国特有属，在传统文化中地位极高，被誉为"百木之长"。枝叶揉碎有独特香柏气息。</p>
+
+<h2>形态对比</h2>
+<table class="compare"><tr><th style="width:60px">性状</th><th>侧柏</th><th>圆柏</th></tr>
+<tr><td>叶型</td><td class="chk">全为鳞叶</td><td class="crs">兼有鳞叶和刺叶</td></tr>
+<tr><td>小枝</td><td class="chk">扁平，排成一平面</td><td class="crs">圆或四棱形</td></tr>
+<tr><td>球果</td><td class="chk">卵圆形直立</td><td class="crs">球形</td></tr>
+<tr><td>木材香气</td><td class="chk">浓烈香柏味</td><td class="crs">清淡</td></tr></table>
+
+<h2>生态与文化</h2>
+<p>极耐寒（-25°C可越冬），抗污染能力较强，吸收二氧化硫和氯气。耐修剪易造型，树龄可达数百年乃至上千年。为黄帝陵等重要历史文化场所的标志性树种。</p>
+
+<h2>利用价值</h2>
+<p>木材芳香材质优良，可供建筑雕刻。枝叶可提取挥发油具抗菌功效。为重要绿化树种，北京天坛有大量古侧柏。陵园墓地常见种植，象征不朽。</p>
+
+</div>
+
+<div class="infobox">
+<div class="title">侧柏</div>
+<div class="img-wrap">
+<img src="encyclopedia_images/侧柏_实拍.jpg" alt="侧柏">
+<div class="cap">侧柏 · Platycladus orientalis</div>
+</div>
+<table>
+<tr><th>界</th><td>植物界 <span class="sci">Plantae</span></td></tr>
+<tr><th>门</th><td>裸子植物门 <span class="sci">Gymnospermae</span></td></tr>
+<tr><th>科</th><td>柏科 <span class="sci">Cupressaceae</span></td></tr>
+<tr><th>属</th><td>侧柏属 <span class="sci">Platycladus</span></td></tr>
+<tr><th>种</th><td><strong>侧柏</strong> <span class="sci">Platycladus orientalis</span></td></tr>
+<tr><th>学名</th><td><span class="sci">Platycladus orientalis</span></td></tr>
+<tr><th>英名</th><td>Chinese arborvitae / Oriental thuja</td></tr>
+<tr><th>别名</th><td>扁柏、香柏、黄柏、香树</td></tr>
+<tr><th>生活型</th><td>常绿乔木</td></tr>
+<tr><th>株高</th><td>15–20 m</td></tr>
+<tr><th>花期</th><td>3–4月 · 雌雄同株</td></tr>
+<tr><th>果期</th><td>9–10月 · 球果卵圆形·红褐色</td></tr>
+<tr><th>海拔</th><td>150–3,300 m</td></tr>
+<tr><th>分布</th><td>除青海、新疆外全国分布</td></tr>
+<tr><th>染色体</th><td>2n = 22</td></tr>
+<tr><th>标签</th><td><span class="tag">百木之长 · 长寿树</span></td></tr>
+</table>
+</div>
+
+</div></div>
+
+<div class="footer"><div class="inner">
+裸子植物门(1) → 松纲(1) → 柏目(1) → 柏科(1) → 侧柏属(1) → 侧柏(1)
+</div></div>
+
+</body>
+</html>

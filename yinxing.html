@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>银杏 - 植物百科</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    line-height: 1.8;
+    font-size: 15px;
+  }
+  .topbar {
+    background: #2d5016;
+    color: #fff;
+    padding: 14px 0;
+    font-size: 13px;
+  }
+  .topbar .wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .topbar a { color: #cde0c0; text-decoration: none; }
+  .topbar a:hover { color: #fff; }
+  .topbar span { color: #8aaa78; margin: 0 6px; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  .main {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    align-items: flex-start;
+  }
+  .content {
+    flex: 1;
+    min-width: 0;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    padding: 30px 35px;
+  }
+  .content h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 2px;
+  }
+  .content h1 small {
+    font-weight: 400;
+    font-size: 18px;
+    color: #666;
+    margin-left: 8px;
+  }
+  .content .sub {
+    color: #999;
+    font-size: 13px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+  }
+  .content h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2d5016;
+    margin: 28px 0 12px;
+    padding-left: 12px;
+    border-left: 3px solid #4a7c2e;
+  }
+  .content h2:first-of-type { margin-top: 0; }
+  .content h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #444;
+    margin: 18px 0 8px;
+  }
+  .content p {
+    margin: 8px 0;
+    text-indent: 2em;
+    text-align: justify;
+  }
+  .content p.no-indent { text-indent: 0; }
+  .content ul {
+    margin: 6px 0 6px 2em;
+    list-style: none;
+  }
+  .content ul li::before {
+    content: "· ";
+    color: #4a7c2e;
+    font-weight: bold;
+  }
+  .content ul li { margin: 3px 0; }
+  .ref-note {
+    background: #f8f8f8;
+    border-left: 3px solid #4a7c2e;
+    padding: 12px 16px;
+    margin: 12px 0;
+    font-size: 13px;
+    color: #555;
+  }
+  .infobox {
+    width: 300px;
+    flex-shrink: 0;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .infobox .title {
+    background: #2d5016;
+    color: #fff;
+    text-align: center;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .infobox .img-wrap {
+    padding: 12px;
+    background: #fafafa;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+  .infobox .img-wrap img {
+    max-width: 100%;
+    max-height: 220px;
+    display: block;
+    margin: 0 auto;
+  }
+  .infobox .img-wrap .cap { font-size: 12px; color: #999; margin-top: 6px; }
+  .infobox table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .infobox table th {
+    background: #f4f7f2;
+    padding: 6px 10px;
+    width: 70px;
+    font-weight: 600;
+    color: #444;
+    text-align: right;
+    border-bottom: 1px solid #e8e8e8;
+    font-size: 12px;
+    vertical-align: top;
+  }
+  .infobox table td {
+    padding: 6px 10px;
+    border-bottom: 1px solid #e8e8e8;
+    color: #333;
+    vertical-align: top;
+  }
+  .infobox table tr:last-child th,
+  .infobox table tr:last-child td { border-bottom: none; }
+  .infobox table .sci { font-style: italic; color: #555; }
+  .infobox .tag {
+    display: inline-block;
+    background: #eef6ea;
+    color: #2d5016;
+    font-size: 11px;
+    padding: 1px 8px;
+    border-radius: 8px;
+    margin: 1px 0;
+  }
+  .compare {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 14px;
+  }
+  .compare th {
+    background: #2d5016;
+    color: #fff;
+    padding: 8px 12px;
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .compare th:first-child { text-align: left; }
+  .compare td {
+    padding: 7px 12px;
+    border-bottom: 1px solid #e8e8e8;
+    text-align: center;
+  }
+  .compare td:first-child { font-weight: 600; text-align: left; color: #444; }
+  .compare tr:nth-child(even) td { background: #fafafa; }
+  .compare .chk { color: #4a7c2e; font-weight: bold; }
+  .compare .crs { color: #cc6666; }
+  .footer {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+  .footer .inner {
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    padding: 20px 35px;
+    font-size: 13px;
+    color: #999;
+    text-align: center;
+  }
+  @media (max-width: 800px) {
+    .main { flex-direction: column-reverse; }
+    .infobox { width: 100%; }
+    .content { padding: 20px; }
+    .content h1 { font-size: 22px; }
+    .content h1 small { font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="index.html">🌐 中国植物百科</a>
+    <span>></span>
+    <a href="#">银杏科</a>
+    <span>></span>
+    <a href="#">银杏属</a>
+    <span>></span>
+    <strong>银杏</strong>
+  </div>
+</div>
+
+<div class="wrap">
+<div class="main">
+
+  <div class="content">
+    <h1>银杏 <small>Ginkgo biloba</small></h1>
+    <div class="sub">中生代孑遗植物 · 活化石 · 中国特有</div>
+
+    <div style="float:right; margin:0 0 12px 20px; width:280px; border:1px solid #eee; border-radius:3px; padding:8px; background:#fafafa; text-align:center;">
+      <img src="images/银杏.png" style="max-width:100%; max-height:200px;">
+      <div style="font-size:12px; color:#999; margin-top:4px;">银杏植物学插画（AI生成）</div>
+    </div>
+
+    <h2>形态特征</h2>
+    <p>银杏（<em>Ginkgo biloba</em>）为落叶大乔木，高达35米，胸径可达2米以上。树皮灰褐色，深纵裂。叶扇形，有长柄，在长枝上螺旋状排列，在短枝上簇生，先端常二裂，叶脉二叉分。雌雄异株，雄球花葇荑花序状，雌球花具长梗。种子核果状，椭圆形或卵圆形，外种皮肉质，成熟时黄色或橙黄色，具臭味；中种皮白色，骨质；内种皮膜质。种仁可食，但不可过量。银杏的扇形叶和二叉状叶脉是其最显著的鉴别特征。</p>
+
+    <h2>分布与生境</h2>
+    <p>银杏原产于中国，现南北各省广泛栽培，尤以天目山、大别山、神农架等山区有野生或半野生种群。喜光、深根性，耐寒、耐旱、耐贫瘠，适应性强，在土层深厚、排水良好的土壤中生长最佳。寿命极长，树龄可达千年以上。</p>
+
+    <h2>分类学</h2>
+    <p>银杏是裸子植物中银杏纲（Ginkgoopsida）的唯一现存物种，其历史可追溯至2.7亿年前的二叠纪。它被称为"孑遗植物"或"活化石"，是中生代银杏类植物中唯一幸存至今的代表。在系统中，银杏归为银杏科（Ginkgoaceae）银杏属（<em>Ginkgo</em>），种加词"<em>biloba</em>"意为"二裂"，指其叶片的二叉分裂特征。</p>
+
+    <h2>生态习性</h2>
+    <p>银杏为喜光阳性树种，不耐荫蔽。深根性，主根发达，抗风力强。对土壤要求不严，在酸性、中性或钙质土壤中均能生长，但以排水良好的微酸性砂壤土最为适宜。生长速度中等，幼年较慢，中年后加快。具有极强的适应性和抗逆性，对烟尘、二氧化硫等污染有较强的抗性，是城市绿化的优良树种。秋季叶片变金黄色，极具观赏价值。</p>
+
+    <h2>利用与文化</h2>
+    <p>银杏在中国文化中有着悠久的历史和丰富的文化内涵。银杏又名"公孙树"，意为"公种而孙得食"，象征厚积薄发、代代传承。每年秋季金黄的银杏叶成为城市一道亮丽的风景线。银杏的种子（白果）可食用，但含氢氰酸，需充分加热后适量食用。木材材质优良，纹理直，结构细密，可用于雕刻、家具及乐器制作。在科研方面，银杏提取物（银杏内酯、银杏黄酮）广泛用于改善记忆力和循环系统健康。</p>
+
+    <h2>参考文献</h2>
+    <ul><li>《中国植物志》第7卷: 20页. 科学出版社.</li><li>Zhou, Z.Y. & Zheng, S.L. 2003. The missing link in Ginkgo evolution. <em>Nature</em> 423: 821–822.</li><li>赵云祥等. 银杏的生态生物学特性研究. 北京林业大学学报.</li></ul>
+  </div>
+
+  <div class="infobox">
+    <div class="title">银杏</div>
+    <div class="img-wrap">
+      <img src="images/银杏_实拍.jpg" alt="银杏">
+      <div class="cap">银杏实拍照片</div>
+    </div>
+    <table>
+      <tr><th>界</th><td>植物界 <span class="sci">Plantae</span></td></tr>
+      <tr><th>门</th><td>裸子植物门 <span class="sci">Gymnospermae</span></td></tr>
+      <tr><th>纲</th><td>银杏纲</td></tr>
+      <tr><th>目</th><td>银杏目</td></tr>
+      <tr><th>科</th><td>银杏科 <span class="sci">Ginkgoaceae</span></td></tr>
+      <tr><th>属</th><td>银杏属 <span class="sci">Ginkgo</span></td></tr>
+      <tr><th>种</th><td><strong>银杏</strong> <span class="sci">Ginkgo biloba</span></td></tr>
+      <tr><th>学名</th><td><span class="sci">Ginkgo biloba</span></td></tr>
+      <tr><th>英名</th><td>Ginkgo / Maidenhair tree</td></tr>
+      <tr><th>生活型</th><td>乔木</td></tr>
+      <tr><th>株高</th><td>20–35 m</td></tr>
+      <tr><th>花</th><td>雌雄异株 · 花期4–5月</td></tr>
+      <tr><th>果</th><td>核果卵圆形 · 黄色 · 9–10月成熟</td></tr>
+      <tr><th>分布</th><td>中国南北广泛栽培</td></tr>
+      <tr><th>染色体</th><td>2n = 24</td></tr>
+      <tr><th>标签</th><td><span class="tag">孑遗植物</span> <span class="tag">活化石</span> <span class="tag">中国特有</span></td></tr>
+    </table>
+  </div>
+
+</div></div>
+
+<div class="footer">
+  <div class="inner">
+    <a href="index.html" style="color:#4a7c2e;">← 返回首页</a> · 银杏（<em>Ginkgo biloba</em>）· 植物百科
+  </div>
+</div>
+
+</body>
+</html>

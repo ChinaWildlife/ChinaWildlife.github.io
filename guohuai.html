@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>国槐 - 植物百科</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    line-height: 1.8;
+    font-size: 15px;
+  }
+  .topbar {
+    background: #2d5016;
+    color: #fff;
+    padding: 14px 0;
+    font-size: 13px;
+  }
+  .topbar .wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .topbar a { color: #cde0c0; text-decoration: none; }
+  .topbar a:hover { color: #fff; }
+  .topbar span { color: #8aaa78; margin: 0 6px; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  .main {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    align-items: flex-start;
+  }
+  .content {
+    flex: 1;
+    min-width: 0;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    padding: 30px 35px;
+  }
+  .content h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 2px;
+  }
+  .content h1 small {
+    font-weight: 400;
+    font-size: 18px;
+    color: #666;
+    margin-left: 8px;
+  }
+  .content .sub {
+    color: #999;
+    font-size: 13px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+  }
+  .content h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2d5016;
+    margin: 28px 0 12px;
+    padding-left: 12px;
+    border-left: 3px solid #4a7c2e;
+  }
+  .content h2:first-of-type { margin-top: 0; }
+  .content h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #444;
+    margin: 18px 0 8px;
+  }
+  .content p {
+    margin: 8px 0;
+    text-indent: 2em;
+    text-align: justify;
+  }
+  .content p.no-indent { text-indent: 0; }
+  .content ul {
+    margin: 6px 0 6px 2em;
+    list-style: none;
+  }
+  .content ul li::before {
+    content: "· ";
+    color: #4a7c2e;
+    font-weight: bold;
+  }
+  .content ul li { margin: 3px 0; }
+  .ref-note {
+    background: #f8f8f8;
+    border-left: 3px solid #4a7c2e;
+    padding: 12px 16px;
+    margin: 12px 0;
+    font-size: 13px;
+    color: #555;
+  }
+  .infobox {
+    width: 300px;
+    flex-shrink: 0;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .infobox .title {
+    background: #2d5016;
+    color: #fff;
+    text-align: center;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .infobox .img-wrap {
+    padding: 12px;
+    background: #fafafa;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+  .infobox .img-wrap img {
+    max-width: 100%;
+    max-height: 220px;
+    display: block;
+    margin: 0 auto;
+  }
+  .infobox .img-wrap .cap { font-size: 12px; color: #999; margin-top: 6px; }
+  .infobox table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .infobox table th {
+    background: #f4f7f2;
+    padding: 6px 10px;
+    width: 70px;
+    font-weight: 600;
+    color: #444;
+    text-align: right;
+    border-bottom: 1px solid #e8e8e8;
+    font-size: 12px;
+    vertical-align: top;
+  }
+  .infobox table td {
+    padding: 6px 10px;
+    border-bottom: 1px solid #e8e8e8;
+    color: #333;
+    vertical-align: top;
+  }
+  .infobox table tr:last-child th,
+  .infobox table tr:last-child td { border-bottom: none; }
+  .infobox table .sci { font-style: italic; color: #555; }
+  .infobox .tag {
+    display: inline-block;
+    background: #eef6ea;
+    color: #2d5016;
+    font-size: 11px;
+    padding: 1px 8px;
+    border-radius: 8px;
+    margin: 1px 0;
+  }
+  .compare {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 14px;
+  }
+  .compare th {
+    background: #2d5016;
+    color: #fff;
+    padding: 8px 12px;
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .compare th:first-child { text-align: left; }
+  .compare td {
+    padding: 7px 12px;
+    border-bottom: 1px solid #e8e8e8;
+    text-align: center;
+  }
+  .compare td:first-child { font-weight: 600; text-align: left; color: #444; }
+  .compare tr:nth-child(even) td { background: #fafafa; }
+  .compare .chk { color: #4a7c2e; font-weight: bold; }
+  .compare .crs { color: #cc6666; }
+  .footer {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+  .footer .inner {
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    padding: 20px 35px;
+    font-size: 13px;
+    color: #999;
+    text-align: center;
+  }
+  @media (max-width: 800px) {
+    .main { flex-direction: column-reverse; }
+    .infobox { width: 100%; }
+    .content { padding: 20px; }
+    .content h1 { font-size: 22px; }
+    .content h1 small { font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="index.html">🌐 中国植物百科</a>
+    <span>></span>
+    <a href="#">豆科</a>
+    <span>></span>
+    <a href="#">槐属</a>
+    <span>></span>
+    <strong>国槐</strong>
+  </div>
+</div>
+
+<div class="wrap">
+<div class="main">
+
+  <div class="content">
+    <h1>国槐 <small>Styphnolobium japonicum</small></h1>
+    <div class="sub">中国乡土树种 · 北京市树 · 文化象征</div>
+
+    <div style="float:right; margin:0 0 12px 20px; width:280px; border:1px solid #eee; border-radius:3px; padding:8px; background:#fafafa; text-align:center;">
+      <img src="images/国槐.png" style="max-width:100%; max-height:200px;">
+      <div style="font-size:12px; color:#999; margin-top:4px;">国槐植物学插画（AI生成）</div>
+    </div>
+
+    <h2>形态特征</h2>
+    <p>国槐（<em>Styphnolobium japonicum</em>）为落叶乔木，高15–25米。树皮灰褐色，纵裂。奇数羽状复叶，小叶7–17枚，卵形或披针形，全缘，先端渐尖，基部圆形或宽楔形。圆锥花序顶生，花黄白色，蝶形花冠，旗瓣近圆形，翼瓣和龙骨瓣具短爪。荚果念珠状，肉质，不开裂，长2–8厘米，有1–6粒种子。种子肾形，黑褐色。花期7–8月，果期10–11月。国槐与刺槐（洋槐）的区别在于：国槐小叶先端渐尖、荚果念珠状肉质；刺槐小叶先端圆钝、荚果扁平开裂。</p>
+
+    <h2>分布与生境</h2>
+    <p>国槐原产中国，南北各省均有栽培，华北平原最为常见。喜光、深根性，耐寒、耐旱、耐盐碱，对土壤要求不严，在石灰性土壤和轻度盐碱土中均可生长。耐污染、抗风能力强，是城市行道树的优选树种。</p>
+
+    <h2>分类学</h2>
+    <p>国槐传统上归为蝶形花科（Papilionaceae）槐属（<em>Sophora</em>），学名<em>Sophora japonica</em>。但依据分子系统学（APG IV分类系统），槐属已重新划归为苦参属（<em>Styphnolobium</em>），科属为豆科（Fabaceae）苦参属（<em>Styphnolobium</em>），种加词"<em>japonicum</em>"意为"日本的"，源于早期西方植物学者通过日本标本的首次描述。国槐是华北地区重要的乡土树种，北京市将其选为市树。</p>
+
+    <h2>生态习性</h2>
+    <p>国槐为喜光阳性树种，幼树稍耐阴。深根性，主根发达，侧根较少，抗风能力强。对气候适应性强，耐寒、耐热、耐干旱、耐盐碱，在pH 7.5–8.5的钙质土壤中生长良好。生长速度中等偏慢，寿命长，可达数百年。国槐是优质的蜜源植物，花量大、花期长，为秋季重要的蜜源。其固氮根瘤能与根瘤菌共生，改良土壤结构。</p>
+
+    <h2>利用与文化</h2>
+    <p>国槐在中国文化中具有深厚的象征意义。槐树在古汉语中与"怀"通假，寓意怀乡思亲。古代科举考试常以"槐黄"指代考试年，故国槐也被视为"功名树"。国槐的花蕾（槐米）和花（槐花）是传统中药，有清热凉血、止血降压的功效。荚果（槐角）亦可入药。木材材质坚硬，富有韧性，耐水湿，可用于造船、家具和建筑。槐花可食，北方民间有食用槐花饼、槐花饭的传统。</p>
+
+    <h2>参考文献</h2>
+    <ul><li>《中国植物志》第40卷: 75页. 科学出版社.</li><li>董云岚等. 国槐种质资源研究进展. 林业科学.</li><li>李保国. 2006. 中国槐文化考. 北京林业大学学报(社会科学版).</li></ul>
+  </div>
+
+  <div class="infobox">
+    <div class="title">国槐</div>
+    <div class="img-wrap">
+      <img src="images/国槐_实拍.jpg" alt="国槐">
+      <div class="cap">国槐实拍照片</div>
+    </div>
+    <table>
+      <tr><th>界</th><td>植物界 <span class="sci">Plantae</span></td></tr>
+      <tr><th>门</th><td>被子植物门 <span class="sci">Angiospermae</span></td></tr>
+      <tr><th>纲</th><td>真双子叶植物纲</td></tr>
+      <tr><th>目</th><td>豆目 Fabales</td></tr>
+      <tr><th>科</th><td>豆科 <span class="sci">Fabaceae</span></td></tr>
+      <tr><th>属</th><td>槐属 <span class="sci">Styphnolobium</span></td></tr>
+      <tr><th>种</th><td><strong>国槐</strong> <span class="sci">Styphnolobium japonicum</span></td></tr>
+      <tr><th>学名</th><td><span class="sci">Styphnolobium japonicum</span></td></tr>
+      <tr><th>英名</th><td>Chinese scholar tree / Pagoda tree</td></tr>
+      <tr><th>生活型</th><td>乔木</td></tr>
+      <tr><th>株高</th><td>15–25 m</td></tr>
+      <tr><th>花</th><td>圆锥花序 · 黄白色 · 花期7–8月</td></tr>
+      <tr><th>果</th><td>荚果念珠状 · 10–11月成熟</td></tr>
+      <tr><th>分布</th><td>原产中国 · 南北各省广泛栽培</td></tr>
+      <tr><th>染色体</th><td>2n = 28</td></tr>
+      <tr><th>标签</th><td><span class="tag">北京市树</span> <span class="tag">乡土树种</span> <span class="tag">蜜源植物</span></td></tr>
+    </table>
+  </div>
+
+</div></div>
+
+<div class="footer">
+  <div class="inner">
+    <a href="index.html" style="color:#4a7c2e;">← 返回首页</a> · 国槐（<em>Styphnolobium japonicum</em>）· 植物百科
+  </div>
+</div>
+
+</body>
+</html>

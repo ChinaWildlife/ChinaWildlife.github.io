@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>毛白杨 - 植物百科</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    line-height: 1.8;
+    font-size: 15px;
+  }
+  .topbar {
+    background: #2d5016;
+    color: #fff;
+    padding: 14px 0;
+    font-size: 13px;
+  }
+  .topbar .wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .topbar a { color: #cde0c0; text-decoration: none; }
+  .topbar a:hover { color: #fff; }
+  .topbar span { color: #8aaa78; margin: 0 6px; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  .main {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    align-items: flex-start;
+  }
+  .content {
+    flex: 1;
+    min-width: 0;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    padding: 30px 35px;
+  }
+  .content h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 2px;
+  }
+  .content h1 small {
+    font-weight: 400;
+    font-size: 18px;
+    color: #666;
+    margin-left: 8px;
+  }
+  .content .sub {
+    color: #999;
+    font-size: 13px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+  }
+  .content h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2d5016;
+    margin: 28px 0 12px;
+    padding-left: 12px;
+    border-left: 3px solid #4a7c2e;
+  }
+  .content h2:first-of-type { margin-top: 0; }
+  .content h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #444;
+    margin: 18px 0 8px;
+  }
+  .content p {
+    margin: 8px 0;
+    text-indent: 2em;
+    text-align: justify;
+  }
+  .content p.no-indent { text-indent: 0; }
+  .content ul {
+    margin: 6px 0 6px 2em;
+    list-style: none;
+  }
+  .content ul li::before {
+    content: "· ";
+    color: #4a7c2e;
+    font-weight: bold;
+  }
+  .content ul li { margin: 3px 0; }
+  .ref-note {
+    background: #f8f8f8;
+    border-left: 3px solid #4a7c2e;
+    padding: 12px 16px;
+    margin: 12px 0;
+    font-size: 13px;
+    color: #555;
+  }
+  .infobox {
+    width: 300px;
+    flex-shrink: 0;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .infobox .title {
+    background: #2d5016;
+    color: #fff;
+    text-align: center;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .infobox .img-wrap {
+    padding: 12px;
+    background: #fafafa;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+  .infobox .img-wrap img {
+    max-width: 100%;
+    max-height: 220px;
+    display: block;
+    margin: 0 auto;
+  }
+  .infobox .img-wrap .cap { font-size: 12px; color: #999; margin-top: 6px; }
+  .infobox table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .infobox table th {
+    background: #f4f7f2;
+    padding: 6px 10px;
+    width: 70px;
+    font-weight: 600;
+    color: #444;
+    text-align: right;
+    border-bottom: 1px solid #e8e8e8;
+    font-size: 12px;
+    vertical-align: top;
+  }
+  .infobox table td {
+    padding: 6px 10px;
+    border-bottom: 1px solid #e8e8e8;
+    color: #333;
+    vertical-align: top;
+  }
+  .infobox table tr:last-child th,
+  .infobox table tr:last-child td { border-bottom: none; }
+  .infobox table .sci { font-style: italic; color: #555; }
+  .infobox .tag {
+    display: inline-block;
+    background: #eef6ea;
+    color: #2d5016;
+    font-size: 11px;
+    padding: 1px 8px;
+    border-radius: 8px;
+    margin: 1px 0;
+  }
+  .compare {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 14px;
+  }
+  .compare th {
+    background: #2d5016;
+    color: #fff;
+    padding: 8px 12px;
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .compare th:first-child { text-align: left; }
+  .compare td {
+    padding: 7px 12px;
+    border-bottom: 1px solid #e8e8e8;
+    text-align: center;
+  }
+  .compare td:first-child { font-weight: 600; text-align: left; color: #444; }
+  .compare tr:nth-child(even) td { background: #fafafa; }
+  .compare .chk { color: #4a7c2e; font-weight: bold; }
+  .compare .crs { color: #cc6666; }
+  .footer {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+  .footer .inner {
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    padding: 20px 35px;
+    font-size: 13px;
+    color: #999;
+    text-align: center;
+  }
+  @media (max-width: 800px) {
+    .main { flex-direction: column-reverse; }
+    .infobox { width: 100%; }
+    .content { padding: 20px; }
+    .content h1 { font-size: 22px; }
+    .content h1 small { font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="index.html">🌐 中国植物百科</a>
+    <span>></span>
+    <a href="#">杨柳科</a>
+    <span>></span>
+    <a href="#">杨属</a>
+    <span>></span>
+    <strong>毛白杨</strong>
+  </div>
+</div>
+
+<div class="wrap">
+<div class="main">
+
+  <div class="content">
+    <h1>毛白杨 <small>Populus tomentosa</small></h1>
+    <div class="sub">中国特有 · 北方速生用材树种 · 华北平原绿化主力</div>
+
+    <div style="float:right; margin:0 0 12px 20px; width:280px; border:1px solid #eee; border-radius:3px; padding:8px; background:#fafafa; text-align:center;">
+      <img src="images/毛白杨.png" style="max-width:100%; max-height:200px;">
+      <div style="font-size:12px; color:#999; margin-top:4px;">毛白杨植物学插画（AI生成）</div>
+    </div>
+
+    <h2>形态特征</h2>
+    <p>毛白杨（<em>Populus tomentosa</em>）为落叶大乔木，高25–30米，可达40米，胸径可达1米以上。树干通直，树皮幼时灰绿色，平滑，老时灰褐色，纵裂。芽卵形，有短柔毛。叶互生，长枝叶片卵形或三角状卵形，长10–15厘米，宽8–12厘米，先端渐尖，基部心形或截形，边缘有波状齿。短枝叶片较小，卵形或卵状三角形。叶背面密被灰白色绒毛，是其最显著的鉴别特征。叶柄长2–5厘米。葇荑花序，雌雄异株，先叶开放。雄花序长10–15厘米，花药红色。雌花序长4–7厘米。蒴果卵圆形，2瓣裂。花期3月，果期4–5月。</p>
+
+    <h2>分布与生境</h2>
+    <p>毛白杨为中国特有树种，主产于华北平原，以黄河中下游地区最为集中。垂直分布可达海拔1,800米。喜光、深根性，喜温暖湿润气候，在年均温7–16℃、年降水量500–900毫米的地区生长良好。对土壤要求不严，以深厚肥沃的微酸性冲积土最为适宜，也能在轻度盐碱土（含盐量0.3%以下）上生长。</p>
+
+    <h2>分类学</h2>
+    <p>毛白杨为杨柳科（Salicaceae）杨属（<em>Populus</em>）植物。种加词"<em>tomentosa</em>"意为"被绒毛的"，特指其叶背面密被白色绒毛。杨属全球约100种，分布于北温带。毛白杨是杨属白杨组（Sect. <em>Populus</em>）的重要物种，与新疆杨（<em>P. alba</em> var. <em>pyramidalis</em>）和银白杨（<em>P. alba</em>）有较近的亲缘关系。毛白杨易与银白杨区别——银白杨叶下面绒毛为银白色，叶形多变异。</p>
+
+    <h2>生态习性</h2>
+    <p>毛白杨为强阳性树种，不耐荫蔽。深根性，主根不发达，但侧根和水平根极为发达，向四周伸展可达10–20米。生长速度极快，是杨属中生长最快的物种之一，10年生树高可达15–20米，胸径20–30厘米。寿命中等，通常50–80年。喜湿润但不耐积水，在地下水位2–3米的冲积土上生长最佳。毛白杨春季产生大量杨絮（种子上的绒毛），是其繁殖方式的一部分，但也成为城市环境中的"飞絮"问题。</p>
+
+    <h2>利用与文化</h2>
+    <p>毛白杨是中国北方最重要的速生用材树种之一，被誉为"北方之剑"。木材材质轻软，纹理直，色泽白，易于加工，可用于造纸、人造板、家具、包装箱、一次性筷子等。毛白杨是华北平原农田防护林带的主栽树种，形成庞大的"绿色长城"，对防风固沙、保持水土有重要贡献。在城市绿化中，毛白杨因其生长快、树形挺拔、叶大荫浓而被广泛用作行道树。春季"杨絮纷飞"虽带来环境困扰，但也是华北平原独特的季节景观。</p>
+
+    <h2>参考文献</h2>
+    <ul><li>《中国植物志》第20卷: 9页. 科学出版社.</li><li>赵永彬等. 2000. 毛白杨种质资源与育种. 北京林业大学学报.</li><li>朱之悌等. 1995. 毛白杨遗传改良研究. 林业科学.</li></ul>
+  </div>
+
+  <div class="infobox">
+    <div class="title">毛白杨</div>
+    <div class="img-wrap">
+      <img src="images/毛白杨.png" alt="毛白杨">
+      <div class="cap">毛白杨植物学插画（AI生成）</div>
+    </div>
+    <table>
+      <tr><th>界</th><td>植物界 <span class="sci">Plantae</span></td></tr>
+      <tr><th>门</th><td>被子植物门 <span class="sci">Angiospermae</span></td></tr>
+      <tr><th>纲</th><td>真双子叶植物纲</td></tr>
+      <tr><th>目</th><td>金虎尾目 Malpighiales</td></tr>
+      <tr><th>科</th><td>杨柳科 <span class="sci">Salicaceae</span></td></tr>
+      <tr><th>属</th><td>杨属 <span class="sci">Populus</span></td></tr>
+      <tr><th>种</th><td><strong>毛白杨</strong> <span class="sci">Populus tomentosa</span></td></tr>
+      <tr><th>学名</th><td><span class="sci">Populus tomentosa</span></td></tr>
+      <tr><th>英名</th><td>Chinese white poplar</td></tr>
+      <tr><th>生活型</th><td>乔木</td></tr>
+      <tr><th>株高</th><td>25–30 m（可达40 m）</td></tr>
+      <tr><th>花</th><td>葇荑花序 · 雌雄异株 · 花期3月</td></tr>
+      <tr><th>果</th><td>蒴果卵圆形 · 4–5月成熟</td></tr>
+      <tr><th>分布</th><td>华北平原 · 黄河中下游各省</td></tr>
+      <tr><th>染色体</th><td>2n = 38</td></tr>
+      <tr><th>标签</th><td><span class="tag">中国特有</span> <span class="tag">速生树种</span> <span class="tag">用材林</span> <span class="tag">农田防护林</span></td></tr>
+    </table>
+  </div>
+
+</div></div>
+
+<div class="footer">
+  <div class="inner">
+    <a href="index.html" style="color:#4a7c2e;">← 返回首页</a> · 毛白杨（<em>Populus tomentosa</em>）· 植物百科
+  </div>
+</div>
+
+</body>
+</html>

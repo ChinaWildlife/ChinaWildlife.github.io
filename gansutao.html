@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>甘肃桃 - 植物百科</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    line-height: 1.8;
+    font-size: 15px;
+  }
+
+  /* ── 顶部导航 ── */
+  .topbar {
+    background: #2d5016;
+    color: #fff;
+    padding: 14px 0;
+    font-size: 13px;
+  }
+  .topbar .wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .topbar a { color: #cde0c0; text-decoration: none; }
+  .topbar a:hover { color: #fff; }
+  .topbar span { color: #8aaa78; margin: 0 6px; }
+
+  /* ── 主容器 ── */
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+  /* ── 主体 ── */
+  .main {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    align-items: flex-start;
+  }
+
+  /* ── 左侧内容 ── */
+  .content {
+    flex: 1;
+    min-width: 0;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    padding: 30px 35px;
+  }
+
+  .content h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 2px;
+  }
+  .content h1 small {
+    font-weight: 400;
+    font-size: 18px;
+    color: #666;
+    margin-left: 8px;
+  }
+  .content .sub {
+    color: #999;
+    font-size: 13px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .content h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2d5016;
+    margin: 28px 0 12px;
+    padding-left: 12px;
+    border-left: 3px solid #4a7c2e;
+  }
+  .content h2:first-of-type { margin-top: 0; }
+  .content h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #444;
+    margin: 18px 0 8px;
+  }
+  .content p {
+    margin: 8px 0;
+    text-indent: 2em;
+    text-align: justify;
+  }
+  .content p.no-indent { text-indent: 0; }
+
+  .content ul {
+    margin: 6px 0 6px 2em;
+    list-style: none;
+  }
+  .content ul li::before {
+    content: "· ";
+    color: #4a7c2e;
+    font-weight: bold;
+  }
+  .content ul li { margin: 3px 0; }
+
+  .ref-note {
+    background: #f8f8f8;
+    border-left: 3px solid #4a7c2e;
+    padding: 12px 16px;
+    margin: 12px 0;
+    font-size: 13px;
+    color: #555;
+  }
+
+  /* ── 右侧信息栏 ── */
+  .infobox {
+    width: 300px;
+    flex-shrink: 0;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .infobox .title {
+    background: #2d5016;
+    color: #fff;
+    text-align: center;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .infobox .img-wrap {
+    padding: 12px;
+    background: #fafafa;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+  .infobox .img-wrap img {
+    max-width: 100%;
+    max-height: 220px;
+    display: block;
+    margin: 0 auto;
+  }
+  .infobox .img-wrap .cap {
+    font-size: 12px;
+    color: #999;
+    margin-top: 6px;
+  }
+  .infobox table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .infobox table th {
+    background: #f4f7f2;
+    padding: 6px 10px;
+    width: 70px;
+    font-weight: 600;
+    color: #444;
+    text-align: right;
+    border-bottom: 1px solid #e8e8e8;
+    font-size: 12px;
+    vertical-align: top;
+  }
+  .infobox table td {
+    padding: 6px 10px;
+    border-bottom: 1px solid #e8e8e8;
+    color: #333;
+    vertical-align: top;
+  }
+  .infobox table tr:last-child th,
+  .infobox table tr:last-child td { border-bottom: none; }
+  .infobox table .sci {
+    font-style: italic;
+    color: #555;
+  }
+  .infobox .tag {
+    display: inline-block;
+    background: #eef6ea;
+    color: #2d5016;
+    font-size: 11px;
+    padding: 1px 8px;
+    border-radius: 8px;
+    margin: 1px 0;
+  }
+
+  /* ── 对比表 ── */
+  .compare {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 14px;
+  }
+  .compare th {
+    background: #2d5016;
+    color: #fff;
+    padding: 8px 12px;
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .compare th:first-child { text-align: left; }
+  .compare td {
+    padding: 7px 12px;
+    border-bottom: 1px solid #e8e8e8;
+    text-align: center;
+  }
+  .compare td:first-child {
+    font-weight: 600;
+    text-align: left;
+    color: #444;
+  }
+  .compare tr:nth-child(even) td { background: #fafafa; }
+  .compare .chk { color: #4a7c2e; font-weight: bold; }
+  .compare .crs { color: #cc6666; }
+
+  /* ── 页脚 ── */
+  .footer {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+  .footer .inner {
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    padding: 20px 35px;
+    font-size: 13px;
+    color: #999;
+    text-align: center;
+  }
+
+  /* ── 响应式 ── */
+  @media (max-width: 800px) {
+    .main { flex-direction: column-reverse; }
+    .infobox { width: 100%; }
+    .content { padding: 20px; }
+    .content h1 { font-size: 22px; }
+    .content h1 small { font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 顶栏 -->
+<div class="topbar">
+  <div class="wrap">
+    <a href="#">植物百科</a>
+    <span>></span>
+    <a href="#">被子植物门</a>
+    <span>></span>
+    <a href="#">蔷薇目</a>
+    <span>></span>
+    <a href="#">蔷薇科</a>
+    <span>></span>
+    <a href="#">桃属</a>
+    <span>></span>
+    <strong>甘肃桃</strong>
+  </div>
+</div>
+
+<div class="wrap">
+<div class="main">
+
+  <!-- ═══ 左侧正文 ═══ -->
+  <div class="content">
+
+    <h1>甘肃桃 <small>Amygdalus kansuensis</small></h1>
+    <div class="sub">中国特有植物 · 蔷薇科桃属 · 优质砧木种质资源</div>
+
+    <div style="float:right; margin:0 0 12px 20px; width:280px; border:1px solid #eee; border-radius:3px; padding:8px; background:#fafafa; text-align:center;">
+      <img src="images/甘肃桃_实拍.jpg" style="max-width:100%; max-height:200px;">
+      <div style="font-size:12px; color:#999; margin-top:4px;">甘肃桃植物学插画（AI生成）</div>
+    </div>
+    <h2>形态特征</h2>
+    <p>甘肃桃（学名：<em>Amygdalus kansuensis</em>），又名甘肃山桃、野桃，为蔷薇科桃属的落叶乔木或灌木，高3–7米。树皮灰褐色，枝条开展。冬芽无毛，为其与普通桃的关键区别特征。</p>
+    <p>叶片卵状披针形，长5–10厘米，宽1.5–3厘米，中下部最宽，先端渐尖，基部宽楔形，叶缘具稀疏细锯齿。叶柄长1–2厘米，无毛或近无毛。花单生，先叶开放，直径1.5–2.5厘米；花瓣粉红色，倒卵形；雄蕊多数；花柱长于雄蕊。</p>
+    <p>果实卵圆形或近球形，直径约2厘米，淡黄色，密被短柔毛，成熟时不开裂。果核近球形，表面有纵、横浅沟纹，但无孔穴，此亦为区别于普通桃的重要特征。</p>
+
+    <h2>分布与生境</h2>
+    <p>甘肃桃为中国特有植物，分布于陕西、甘肃、湖北、四川等省份。生于海拔1,000–2,300米的山坡、山谷疏林及灌丛中。在秦岭山脉呈现明显的垂直分布格局：1,000–1,500米与栓皮栎、油松混交；1,500–2,000米与锐齿槲栎、华山松为伴；2,000米以上进入云杉、冷杉林缘灌丛。</p>
+
+    <h2>分类学</h2>
+    <p>甘肃桃的分类学历史始于1925年，Skeels在《Proceedings of the Biological Society of Washington》第38卷87页正式发表该组合名。其基名为Rehder于1912年发表的<em>Prunus kansuensis</em>。俞德浚在1974年出版的《中国果树分类学》中系统整理了桃属分类，确立了甘肃桃的种级地位。《中国植物志》第38卷（1986年）收录了该物种的详细形态描述。</p>
+
+    <div class="ref-note">⚠ 检索表定位：冬芽无毛 → 核面无孔穴 → <strong>甘肃桃</strong></div>
+
+    <h2>形态对比</h2>
+    <table class="compare">
+      <tr><th style="width:60px">性状</th><th>甘肃桃</th><th>普通桃 <em>A. persica</em></th></tr>
+      <tr><td>冬芽</td><td class="chk">无毛</td><td class="crs">有毛</td></tr>
+      <tr><td>叶片最宽处</td><td class="chk">中下部</td><td class="crs">中部</td></tr>
+      <tr><td>花柱</td><td class="chk">长于雄蕊</td><td class="crs">与雄蕊近等长</td></tr>
+      <tr><td>果实直径</td><td class="chk">~2 cm</td><td class="crs">5–7 cm</td></tr>
+      <tr><td>核面孔穴</td><td class="chk">无</td><td class="crs">有</td></tr>
+    </table>
+
+    <h2>生态与共生</h2>
+    <p>甘肃桃根系可能与丛枝菌根真菌（AMF）形成共生关系。研究假设海拔升高导致环境胁迫增加，可能诱导AMF侵染率上升，进而通过诱导系统抗性（ISR）通路增强植株对根结线虫（<em>Meloidogyne</em> spp.）的抵抗能力。这一假说尚待实验验证。</p>
+
+    <h3>生化成分</h3>
+    <ul>
+      <li>氰苷类（如苦杏仁苷）——植食者防御</li>
+      <li>酚酸类（绿原酸、咖啡酸）——抗菌、抗氧化</li>
+      <li>类黄酮（槲皮素、山奈酚）——UV保护、信号传导</li>
+      <li>根部分泌物——线虫趋避作用</li>
+    </ul>
+
+    <h2>遗传育种价值</h2>
+    <p>甘肃桃与普通桃杂交亲和性高，是生产上常用的砧木材料。其三大核心育种价值为：（1）抗线虫基因资源；（2）耐寒性——可分布于海拔2,300米的高寒山区；（3）矮化性状——树高仅3–7米，可用于矮化砧木选育。</p>
+
+    <h3>分子系统学</h3>
+    <p>基于ITS序列的系统发育分析显示，甘肃桃在桃属中与普通桃亲缘关系最近，分化时间约在2.3–3.8百万年前（上新世晚期），与青藏高原隆升和第四纪冰期气候波动密切相关。</p>
+
+    <h2>参考文献</h2>
+    <ul>
+      <li>Skeels, H.C. 1925. <em>Proceedings of the Biological Society of Washington</em> 38: 87.</li>
+      <li>俞德浚. 1974. 《中国果树分类学》. 农业出版社.</li>
+      <li>中国科学院中国植物志编辑委员会. 1986. 《中国植物志》第38卷: 23页. 科学出版社.</li>
+      <li>Verde, I. et al. 2012. The peach genome. <em>Nature Genetics</em> 45: 487–494.</li>
+    </ul>
+
+  </div>
+
+  <!-- ═══ 右侧信息栏 ═══ -->
+  <div class="infobox">
+    <div class="title">甘肃桃</div>
+    <div class="img-wrap">
+      <img src="images/甘肃桃_实拍.jpg" alt="甘肃桃">
+      <div class="cap">甘肃桃花枝（合肥匡河公园）</div>
+    </div>
+    <table>
+      <tr><th>界</th><td>植物界 <span class="sci">Plantae</span></td></tr>
+      <tr><th>门</th><td>被子植物门 <span class="sci">Angiospermae</span></td></tr>
+      <tr><th>纲</th><td>真双子叶植物纲 <span class="sci">Eudicots</span></td></tr>
+      <tr><th>目</th><td>蔷薇目 <span class="sci">Rosales</span></td></tr>
+      <tr><th>科</th><td>蔷薇科 <span class="sci">Rosaceae</span></td></tr>
+      <tr><th>属</th><td>桃属 <span class="sci">Amygdalus</span></td></tr>
+      <tr><th>种</th><td><strong>甘肃桃</strong> <span class="sci">A. kansuensis</span></td></tr>
+      <tr><th>学名</th><td><span class="sci">Amygdalus kansuensis</span><br>(Rehd.) Skeels</td></tr>
+      <tr><th>英名</th><td>Gansu peach / Kansu peach</td></tr>
+      <tr><th>异名</th><td><span class="sci">Prunus kansuensis</span><br>Rehder</td></tr>
+      <tr><th>发表</th><td>Proc. Biol. Soc. Wash.<br>38:87 (1925)</td></tr>
+      <tr><th>模式产地</th><td>甘肃</td></tr>
+      <tr><th>生活型</th><td>落叶乔木或灌木</td></tr>
+      <tr><th>株高</th><td>3–7 m</td></tr>
+      <tr><th>花期</th><td>先叶开放 · 粉红色</td></tr>
+      <tr><th>果期</th><td>卵圆形 · ~2 cm · 淡黄色</td></tr>
+      <tr><th>海拔</th><td>1,000–2,300 m</td></tr>
+      <tr><th>分布</th><td>陕西 · 甘肃 · 湖北 · 四川</td></tr>
+      <tr><th>染色体</th><td>2n = 16</td></tr>
+      <tr><th>保护</th><td><span class="tag">中国特有</span></td></tr>
+    </table>
+  </div>
+
+</div></div>
+
+<!-- 页脚 -->
+<div class="footer">
+  <div class="inner">
+    全球植物 <strong>639科 / 12,000属 / 462,000种</strong> · 蔷薇科(1) → 桃属(1) → 甘肃桃(1)
+  </div>
+</div>
+
+</body>
+</html>

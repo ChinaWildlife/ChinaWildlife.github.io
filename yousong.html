@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>油松 - 植物百科</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    line-height: 1.8;
+    font-size: 15px;
+  }
+  .topbar {
+    background: #2d5016;
+    color: #fff;
+    padding: 14px 0;
+    font-size: 13px;
+  }
+  .topbar .wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .topbar a { color: #cde0c0; text-decoration: none; }
+  .topbar a:hover { color: #fff; }
+  .topbar span { color: #8aaa78; margin: 0 6px; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  .main {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    align-items: flex-start;
+  }
+  .content {
+    flex: 1;
+    min-width: 0;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    padding: 30px 35px;
+  }
+  .content h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 2px;
+  }
+  .content h1 small {
+    font-weight: 400;
+    font-size: 18px;
+    color: #666;
+    margin-left: 8px;
+  }
+  .content .sub {
+    color: #999;
+    font-size: 13px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+  }
+  .content h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2d5016;
+    margin: 28px 0 12px;
+    padding-left: 12px;
+    border-left: 3px solid #4a7c2e;
+  }
+  .content h2:first-of-type { margin-top: 0; }
+  .content h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #444;
+    margin: 18px 0 8px;
+  }
+  .content p {
+    margin: 8px 0;
+    text-indent: 2em;
+    text-align: justify;
+  }
+  .content p.no-indent { text-indent: 0; }
+  .content ul {
+    margin: 6px 0 6px 2em;
+    list-style: none;
+  }
+  .content ul li::before {
+    content: "· ";
+    color: #4a7c2e;
+    font-weight: bold;
+  }
+  .content ul li { margin: 3px 0; }
+  .ref-note {
+    background: #f8f8f8;
+    border-left: 3px solid #4a7c2e;
+    padding: 12px 16px;
+    margin: 12px 0;
+    font-size: 13px;
+    color: #555;
+  }
+  .infobox {
+    width: 300px;
+    flex-shrink: 0;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .infobox .title {
+    background: #2d5016;
+    color: #fff;
+    text-align: center;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .infobox .img-wrap {
+    padding: 12px;
+    background: #fafafa;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+  .infobox .img-wrap img {
+    max-width: 100%;
+    max-height: 220px;
+    display: block;
+    margin: 0 auto;
+  }
+  .infobox .img-wrap .cap { font-size: 12px; color: #999; margin-top: 6px; }
+  .infobox table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .infobox table th {
+    background: #f4f7f2;
+    padding: 6px 10px;
+    width: 70px;
+    font-weight: 600;
+    color: #444;
+    text-align: right;
+    border-bottom: 1px solid #e8e8e8;
+    font-size: 12px;
+    vertical-align: top;
+  }
+  .infobox table td {
+    padding: 6px 10px;
+    border-bottom: 1px solid #e8e8e8;
+    color: #333;
+    vertical-align: top;
+  }
+  .infobox table tr:last-child th,
+  .infobox table tr:last-child td { border-bottom: none; }
+  .infobox table .sci { font-style: italic; color: #555; }
+  .infobox .tag {
+    display: inline-block;
+    background: #eef6ea;
+    color: #2d5016;
+    font-size: 11px;
+    padding: 1px 8px;
+    border-radius: 8px;
+    margin: 1px 0;
+  }
+  .compare {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 14px;
+  }
+  .compare th {
+    background: #2d5016;
+    color: #fff;
+    padding: 8px 12px;
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .compare th:first-child { text-align: left; }
+  .compare td {
+    padding: 7px 12px;
+    border-bottom: 1px solid #e8e8e8;
+    text-align: center;
+  }
+  .compare td:first-child { font-weight: 600; text-align: left; color: #444; }
+  .compare tr:nth-child(even) td { background: #fafafa; }
+  .compare .chk { color: #4a7c2e; font-weight: bold; }
+  .compare .crs { color: #cc6666; }
+  .footer {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+  .footer .inner {
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    padding: 20px 35px;
+    font-size: 13px;
+    color: #999;
+    text-align: center;
+  }
+  @media (max-width: 800px) {
+    .main { flex-direction: column-reverse; }
+    .infobox { width: 100%; }
+    .content { padding: 20px; }
+    .content h1 { font-size: 22px; }
+    .content h1 small { font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="index.html">🌐 中国植物百科</a>
+    <span>></span>
+    <a href="#">松科</a>
+    <span>></span>
+    <a href="#">松属</a>
+    <span>></span>
+    <strong>油松</strong>
+  </div>
+</div>
+
+<div class="wrap">
+<div class="main">
+
+  <div class="content">
+    <h1>油松 <small>Pinus tabuliformis</small></h1>
+    <div class="sub">中国特有 · 北方重要用材树种 · 华北松林建群种</div>
+
+    <div style="float:right; margin:0 0 12px 20px; width:280px; border:1px solid #eee; border-radius:3px; padding:8px; background:#fafafa; text-align:center;">
+      <img src="images/油松.png" style="max-width:100%; max-height:200px;">
+      <div style="font-size:12px; color:#999; margin-top:4px;">油松植物学插画（AI生成）</div>
+    </div>
+
+    <h2>形态特征</h2>
+    <p>油松（<em>Pinus tabuliformis</em>）为常绿乔木，高15–25米，胸径可达1米以上。树皮灰褐色或褐灰色，裂成不规则较厚的鳞状块片，裂缝及上部树皮红褐色。大枝平展或斜向上，老树树冠平顶。冬芽长圆形，微具树脂，芽鳞红褐色。针叶2针一束，粗硬，长10–15厘米，径约1.5毫米，暗绿色，两面具气孔线，叶鞘宿存。树脂道5–8个或更多，边生，多数生于背面。雄球花圆柱形，在新枝下部聚生成穗状，黄色；雌球花绿紫色。球果卵形或圆卵形，长4–9厘米，有短梗，向下弯垂，成熟前绿色，熟时淡黄色或淡褐黄色。种子卵圆形，连翅长1.5–2厘米。花期4–5月，球果翌年10月成熟。</p>
+
+    <h2>分布与生境</h2>
+    <p>油松为中国特有树种，自然分布横跨东北、华北、西北和西南各地，是松属中分布最北的物种之一。主要分布于辽宁、内蒙古、河北、山西、陕西、甘肃、宁夏、青海、四川北部等地。喜光、深根性，喜干冷气候，在土层深厚、排水良好的酸性、中性或钙质黄土上均能生长良好，在-25℃的低温下也能安全越冬。</p>
+
+    <h2>分类学</h2>
+    <p>油松为松科（Pinaceae）松属（<em>Pinus</em>）植物。种加词"<em>tabuliformis</em>"意为"平台状的"，指老树形成的平顶树冠。油松是松属双维管束亚属（<em>Pinus</em> subg. <em>Pinus</em>）的典型代表，与同属的赤松（<em>P. densiflora</em>）和华山松（<em>P. armandii</em>）在分布区上有所重叠，但可通过针叶数量（2针）、树脂道位置（边生）和球果形状鉴别。</p>
+
+    <h2>生态习性</h2>
+    <p>油松为强阳性树种，喜光，幼树不耐阴。深根性，主根可深入土层2米以上，侧根发达，抗风能力强。耐寒性强，可耐-30℃低温；耐旱性强，在年降水量300–600毫米的地区生长良好；耐瘠薄，在石质山地和黄土高原均能生长。生长速度中等，20–30年进入生长盛期。寿命长，可达500年以上。油松是华北地区重要的建群种，常形成纯林或与栎类组成针阔混交林。</p>
+
+    <h2>利用与文化</h2>
+    <p>油松是中国北方最重要的用材树种之一。木材材质坚硬，纹理直，富含松脂，耐久用，可供建筑、电杆、矿柱、造船、家具等用。树干可割取松脂，提取松节油；树皮可提取栲胶。松节、松针和花粉均可供药用。油松四季常青，树形挺拔苍劲，是北方园林绿化的骨干树种。在北京、西安等古都，众多千年古松被誉为"国宝"。油松也是水土保持和荒山造林的首选树种，在黄土高原的生态恢复中发挥关键作用。</p>
+
+    <h2>参考文献</h2>
+    <ul><li>《中国植物志》第7卷: 263页. 科学出版社.</li><li>徐化成等. 1998. 油松天然林地理分布规律的研究. 林业科学.</li><li>王九龄. 2000. 油松生态学特性及造林技术. 中国林业出版社.</li></ul>
+  </div>
+
+  <div class="infobox">
+    <div class="title">油松</div>
+    <div class="img-wrap">
+      <img src="images/油松.png" alt="油松">
+      <div class="cap">油松植物学插画（AI生成）</div>
+    </div>
+    <table>
+      <tr><th>界</th><td>植物界 <span class="sci">Plantae</span></td></tr>
+      <tr><th>门</th><td>裸子植物门 <span class="sci">Gymnospermae</span></td></tr>
+      <tr><th>纲</th><td>松纲</td></tr>
+      <tr><th>目</th><td>松目 Pinales</td></tr>
+      <tr><th>科</th><td>松科 <span class="sci">Pinaceae</span></td></tr>
+      <tr><th>属</th><td>松属 <span class="sci">Pinus</span></td></tr>
+      <tr><th>种</th><td><strong>油松</strong> <span class="sci">Pinus tabuliformis</span></td></tr>
+      <tr><th>学名</th><td><span class="sci">Pinus tabuliformis</span></td></tr>
+      <tr><th>英名</th><td>Chinese red pine / Oil pine</td></tr>
+      <tr><th>生活型</th><td>乔木</td></tr>
+      <tr><th>株高</th><td>15–25 m（可达30 m）</td></tr>
+      <tr><th>花</th><td>雄球花黄色 · 雌球花绿紫色 · 花期4–5月</td></tr>
+      <tr><th>果</th><td>球果卵形 · 长4–9 cm · 翌年10月成熟</td></tr>
+      <tr><th>分布</th><td>东北·华北·西北·西南各省区</td></tr>
+      <tr><th>染色体</th><td>2n = 24</td></tr>
+      <tr><th>标签</th><td><span class="tag">中国特有</span> <span class="tag">用材树种</span> <span class="tag">水土保持</span> <span class="tag">建群种</span></td></tr>
+    </table>
+  </div>
+
+</div></div>
+
+<div class="footer">
+  <div class="inner">
+    <a href="index.html" style="color:#4a7c2e;">← 返回首页</a> · 油松（<em>Pinus tabuliformis</em>）· 植物百科
+  </div>
+</div>
+
+</body>
+</html>

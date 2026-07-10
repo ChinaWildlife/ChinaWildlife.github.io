@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>白皮松 - 植物百科</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    line-height: 1.8;
+    font-size: 15px;
+  }
+  .topbar {
+    background: #2d5016;
+    color: #fff;
+    padding: 14px 0;
+    font-size: 13px;
+  }
+  .topbar .wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .topbar a { color: #cde0c0; text-decoration: none; }
+  .topbar a:hover { color: #fff; }
+  .topbar span { color: #8aaa78; margin: 0 6px; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  .main {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    align-items: flex-start;
+  }
+  .content {
+    flex: 1;
+    min-width: 0;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    padding: 30px 35px;
+  }
+  .content h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 2px;
+  }
+  .content h1 small {
+    font-weight: 400;
+    font-size: 18px;
+    color: #666;
+    margin-left: 8px;
+  }
+  .content .sub {
+    color: #999;
+    font-size: 13px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+  }
+  .content h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2d5016;
+    margin: 28px 0 12px;
+    padding-left: 12px;
+    border-left: 3px solid #4a7c2e;
+  }
+  .content h2:first-of-type { margin-top: 0; }
+  .content h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #444;
+    margin: 18px 0 8px;
+  }
+  .content p {
+    margin: 8px 0;
+    text-indent: 2em;
+    text-align: justify;
+  }
+  .content p.no-indent { text-indent: 0; }
+  .content ul {
+    margin: 6px 0 6px 2em;
+    list-style: none;
+  }
+  .content ul li::before {
+    content: "· ";
+    color: #4a7c2e;
+    font-weight: bold;
+  }
+  .content ul li { margin: 3px 0; }
+  .ref-note {
+    background: #f8f8f8;
+    border-left: 3px solid #4a7c2e;
+    padding: 12px 16px;
+    margin: 12px 0;
+    font-size: 13px;
+    color: #555;
+  }
+  .infobox {
+    width: 300px;
+    flex-shrink: 0;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .infobox .title {
+    background: #2d5016;
+    color: #fff;
+    text-align: center;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .infobox .img-wrap {
+    padding: 12px;
+    background: #fafafa;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+  .infobox .img-wrap img {
+    max-width: 100%;
+    max-height: 220px;
+    display: block;
+    margin: 0 auto;
+  }
+  .infobox .img-wrap .cap { font-size: 12px; color: #999; margin-top: 6px; }
+  .infobox table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .infobox table th {
+    background: #f4f7f2;
+    padding: 6px 10px;
+    width: 70px;
+    font-weight: 600;
+    color: #444;
+    text-align: right;
+    border-bottom: 1px solid #e8e8e8;
+    font-size: 12px;
+    vertical-align: top;
+  }
+  .infobox table td {
+    padding: 6px 10px;
+    border-bottom: 1px solid #e8e8e8;
+    color: #333;
+    vertical-align: top;
+  }
+  .infobox table tr:last-child th,
+  .infobox table tr:last-child td { border-bottom: none; }
+  .infobox table .sci { font-style: italic; color: #555; }
+  .infobox .tag {
+    display: inline-block;
+    background: #eef6ea;
+    color: #2d5016;
+    font-size: 11px;
+    padding: 1px 8px;
+    border-radius: 8px;
+    margin: 1px 0;
+  }
+  .compare {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 14px;
+  }
+  .compare th {
+    background: #2d5016;
+    color: #fff;
+    padding: 8px 12px;
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .compare th:first-child { text-align: left; }
+  .compare td {
+    padding: 7px 12px;
+    border-bottom: 1px solid #e8e8e8;
+    text-align: center;
+  }
+  .compare td:first-child { font-weight: 600; text-align: left; color: #444; }
+  .compare tr:nth-child(even) td { background: #fafafa; }
+  .compare .chk { color: #4a7c2e; font-weight: bold; }
+  .compare .crs { color: #cc6666; }
+  .footer {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+  .footer .inner {
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    padding: 20px 35px;
+    font-size: 13px;
+    color: #999;
+    text-align: center;
+  }
+  @media (max-width: 800px) {
+    .main { flex-direction: column-reverse; }
+    .infobox { width: 100%; }
+    .content { padding: 20px; }
+    .content h1 { font-size: 22px; }
+    .content h1 small { font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="index.html">🌐 中国植物百科</a>
+    <span>></span>
+    <a href="#">松科</a>
+    <span>></span>
+    <a href="#">松属</a>
+    <span>></span>
+    <strong>白皮松</strong>
+  </div>
+</div>
+
+<div class="wrap">
+<div class="main">
+
+  <div class="content">
+    <h1>白皮松 <small>Pinus bungeana</small></h1>
+    <div class="sub">中国特有 · 奇特的斑驳白干 · 北方园林珍品</div>
+
+    <div style="float:right; margin:0 0 12px 20px; width:280px; border:1px solid #eee; border-radius:3px; padding:8px; background:#fafafa; text-align:center;">
+      <img src="images/白皮松.png" style="max-width:100%; max-height:200px;">
+      <div style="font-size:12px; color:#999; margin-top:4px;">白皮松植物学插画（AI生成）</div>
+    </div>
+
+    <h2>形态特征</h2>
+    <p>白皮松（<em>Pinus bungeana</em>）为常绿乔木，高15–25米，可达30米，胸径可达1米以上。树皮幼时灰绿色，光滑；随着年龄增长，树皮呈不规则片状剥落，露出白色内皮，形成白褐相间的斑驳状图案，是其最显著的识别特征。冬芽卵形，红褐色。针叶3针一束，长5–10厘米，径约1.5–2毫米，粗硬，叶缘有细锯齿，叶鞘早落。球果卵圆形，长5–7厘米，熟时淡黄褐色。种子倒卵圆形，长约1厘米，有翅（晚熟类型有时无翅）。球果成熟期在9–10月。与其他松属植物最大的区别在于独特的树皮呈现斑驳白干和3针一束的针叶形态。</p>
+
+    <h2>分布与生境</h2>
+    <p>白皮松为中国特有珍稀树种，主产于山西、河北、河南、陕西、甘肃、四川北部和湖北西部。垂直分布可达海拔2,000米。喜光，耐旱、耐寒、耐干旱瘠薄，在石质山地、石灰岩山地和黄土丘陵均可生长。对土壤pH适应范围广，在酸性、中性至微碱性土壤中均能生长，是松类中最耐钙质土壤的树种之一。</p>
+
+    <h2>分类学</h2>
+    <p>白皮松为松科（Pinaceae）松属（<em>Pinus</em>）植物。种加词"<em>bungeana</em>"用以纪念俄国植物学家亚历山大·冯·本格（Alexander von Bunge），他于1831年在北京附近采集了该物种的模式标本。白皮松属于松属单维管束亚属（<em>Pinus</em> subg. <em>Strobus</em>）。3针一束的针叶在松属中较为少见（多数为2针或5针一束）。白皮松是北方园林中极为珍贵的观赏树种。</p>
+
+    <h2>生态习性</h2>
+    <p>白皮松为喜光阳性树种，但幼树稍耐阴。深根性，主根发达，侧根较少，抗风力中等。耐寒性强，可耐-30℃低温；耐旱性强，在年降水量400–600毫米的干旱地区也能生长；耐瘠薄，在土层浅薄的石质山地可正常生长。生长速度较为缓慢，20年生树高约5–8米。寿命极长，可达千年以上，北京北海公园和戒台寺有树龄逾千年的古白皮松。对二氧化硫等有害气体有较强抗性。</p>
+
+    <h2>利用与文化</h2>
+    <p>白皮松以其独特的斑驳白色树干而闻名，被誉为"园林奇葩"。其树皮呈不规则的白色、灰绿色和浅褐色斑块相间，在松属植物中独一无二，被称为"美人松"。白皮松是北方皇家园林的标配树种，北京北海公园团城上的"白袍将军"（800年树龄的白皮松）、戒台寺的古白皮松群均为著名古树名木。木材材质较脆，纹理直，可供建筑、家具及文具用。树姿优美，树形挺拔，四季常青，是庭院孤植或对植的上佳选择。种子可食。</p>
+
+    <h2>参考文献</h2>
+    <ul><li>《中国植物志》第7卷: 268页. 科学出版社.</li><li>傅立国. 1991. 中国珍稀濒危植物. 上海教育出版社.</li><li>李永良. 2005. 白皮松天然林群落特征研究. 林业科学.</li></ul>
+  </div>
+
+  <div class="infobox">
+    <div class="title">白皮松</div>
+    <div class="img-wrap">
+      <img src="images/白皮松.png" alt="白皮松">
+      <div class="cap">白皮松植物学插画（AI生成）</div>
+    </div>
+    <table>
+      <tr><th>界</th><td>植物界 <span class="sci">Plantae</span></td></tr>
+      <tr><th>门</th><td>裸子植物门 <span class="sci">Gymnospermae</span></td></tr>
+      <tr><th>纲</th><td>松纲</td></tr>
+      <tr><th>目</th><td>松目 Pinales</td></tr>
+      <tr><th>科</th><td>松科 <span class="sci">Pinaceae</span></td></tr>
+      <tr><th>属</th><td>松属 <span class="sci">Pinus</span></td></tr>
+      <tr><th>种</th><td><strong>白皮松</strong> <span class="sci">Pinus bungeana</span></td></tr>
+      <tr><th>学名</th><td><span class="sci">Pinus bungeana</span></td></tr>
+      <tr><th>英名</th><td>Lacebark pine / White-barked pine</td></tr>
+      <tr><th>生活型</th><td>乔木</td></tr>
+      <tr><th>株高</th><td>15–25 m（可达30 m）</td></tr>
+      <tr><th>花</th><td>雄球花黄色 · 雌球花淡绿色 · 花期4–5月</td></tr>
+      <tr><th>果</th><td>球果卵圆形 · 长5–7 cm · 翌年10月成熟</td></tr>
+      <tr><th>分布</th><td>山西·河北·河南·陕西·甘肃·四川北部</td></tr>
+      <tr><th>染色体</th><td>2n = 24</td></tr>
+      <tr><th>标签</th><td><span class="tag">中国特有</span> <span class="tag">园林珍品</span> <span class="tag">斑驳树皮</span> <span class="tag">庭院观赏</span></td></tr>
+    </table>
+  </div>
+
+</div></div>
+
+<div class="footer">
+  <div class="inner">
+    <a href="index.html" style="color:#4a7c2e;">← 返回首页</a> · 白皮松（<em>Pinus bungeana</em>）· 植物百科
+  </div>
+</div>
+
+</body>
+</html>

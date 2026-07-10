@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>桂花 - 植物百科</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    line-height: 1.8;
+    font-size: 15px;
+  }
+  .topbar {
+    background: #2d5016;
+    color: #fff;
+    padding: 14px 0;
+    font-size: 13px;
+  }
+  .topbar .wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .topbar a { color: #cde0c0; text-decoration: none; }
+  .topbar a:hover { color: #fff; }
+  .topbar span { color: #8aaa78; margin: 0 6px; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  .main {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    align-items: flex-start;
+  }
+  .content {
+    flex: 1;
+    min-width: 0;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    padding: 30px 35px;
+  }
+  .content h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 2px;
+  }
+  .content h1 small {
+    font-weight: 400;
+    font-size: 18px;
+    color: #666;
+    margin-left: 8px;
+  }
+  .content .sub {
+    color: #999;
+    font-size: 13px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+  }
+  .content h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2d5016;
+    margin: 28px 0 12px;
+    padding-left: 12px;
+    border-left: 3px solid #4a7c2e;
+  }
+  .content h2:first-of-type { margin-top: 0; }
+  .content h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #444;
+    margin: 18px 0 8px;
+  }
+  .content p {
+    margin: 8px 0;
+    text-indent: 2em;
+    text-align: justify;
+  }
+  .content p.no-indent { text-indent: 0; }
+  .content ul {
+    margin: 6px 0 6px 2em;
+    list-style: none;
+  }
+  .content ul li::before {
+    content: "· ";
+    color: #4a7c2e;
+    font-weight: bold;
+  }
+  .content ul li { margin: 3px 0; }
+  .ref-note {
+    background: #f8f8f8;
+    border-left: 3px solid #4a7c2e;
+    padding: 12px 16px;
+    margin: 12px 0;
+    font-size: 13px;
+    color: #555;
+  }
+  .infobox {
+    width: 300px;
+    flex-shrink: 0;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .infobox .title {
+    background: #2d5016;
+    color: #fff;
+    text-align: center;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .infobox .img-wrap {
+    padding: 12px;
+    background: #fafafa;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+  .infobox .img-wrap img {
+    max-width: 100%;
+    max-height: 220px;
+    display: block;
+    margin: 0 auto;
+  }
+  .infobox .img-wrap .cap { font-size: 12px; color: #999; margin-top: 6px; }
+  .infobox table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .infobox table th {
+    background: #f4f7f2;
+    padding: 6px 10px;
+    width: 70px;
+    font-weight: 600;
+    color: #444;
+    text-align: right;
+    border-bottom: 1px solid #e8e8e8;
+    font-size: 12px;
+    vertical-align: top;
+  }
+  .infobox table td {
+    padding: 6px 10px;
+    border-bottom: 1px solid #e8e8e8;
+    color: #333;
+    vertical-align: top;
+  }
+  .infobox table tr:last-child th,
+  .infobox table tr:last-child td { border-bottom: none; }
+  .infobox table .sci { font-style: italic; color: #555; }
+  .infobox .tag {
+    display: inline-block;
+    background: #eef6ea;
+    color: #2d5016;
+    font-size: 11px;
+    padding: 1px 8px;
+    border-radius: 8px;
+    margin: 1px 0;
+  }
+  .compare {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 14px;
+  }
+  .compare th {
+    background: #2d5016;
+    color: #fff;
+    padding: 8px 12px;
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .compare th:first-child { text-align: left; }
+  .compare td {
+    padding: 7px 12px;
+    border-bottom: 1px solid #e8e8e8;
+    text-align: center;
+  }
+  .compare td:first-child { font-weight: 600; text-align: left; color: #444; }
+  .compare tr:nth-child(even) td { background: #fafafa; }
+  .compare .chk { color: #4a7c2e; font-weight: bold; }
+  .compare .crs { color: #cc6666; }
+  .footer {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+  .footer .inner {
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    padding: 20px 35px;
+    font-size: 13px;
+    color: #999;
+    text-align: center;
+  }
+  @media (max-width: 800px) {
+    .main { flex-direction: column-reverse; }
+    .infobox { width: 100%; }
+    .content { padding: 20px; }
+    .content h1 { font-size: 22px; }
+    .content h1 small { font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="index.html">🌐 中国植物百科</a>
+    <span>></span>
+    <a href="#">木犀科</a>
+    <span>></span>
+    <a href="#">木犀属</a>
+    <span>></span>
+    <strong>桂花</strong>
+  </div>
+</div>
+
+<div class="wrap">
+<div class="main">
+
+  <div class="content">
+    <h1>桂花 <small>Osmanthus fragrans</small></h1>
+    <div class="sub">中国传统十大名花 · 合肥市花 · 八月花神</div>
+
+    <div style="float:right; margin:0 0 12px 20px; width:280px; border:1px solid #eee; border-radius:3px; padding:8px; background:#fafafa; text-align:center;">
+      <img src="images/桂花.png" style="max-width:100%; max-height:200px;">
+      <div style="font-size:12px; color:#999; margin-top:4px;">桂花植物学插画（AI生成）</div>
+    </div>
+
+    <h2>形态特征</h2>
+    <p>桂花（<em>Osmanthus fragrans</em>）为常绿乔木或灌木，高3–10米。树皮灰褐色。叶片革质，椭圆形、长椭圆形或椭圆状披针形，长7–14.5厘米，宽2.6–4.5厘米，先端渐尖，基部楔形，全缘或上半部疏生细锯齿。叶面深绿色，有光泽，背面淡绿色。聚伞花序簇生于叶腋，每腋内有花多朵；花极芳香；花冠黄白色、淡黄色、黄色或橘红色，裂片4；雄蕊2。核果歪斜，椭圆形，长1–1.5厘米，紫黑色。花期9–10月上旬，果期翌年3月。桂花根据花色和花期分为四大品种群：金桂（金黄色）、银桂（黄白色）、丹桂（橙红色）和四季桂（多次开花）。</p>
+
+    <h2>分布与生境</h2>
+    <p>桂花原产中国西南部，现长江流域及以南各省广泛栽培。喜温暖湿润气候，最适年均温15–25℃，月均温不低于0℃。喜光，但也耐半阴。对土壤要求不严，在酸性、中性和微碱性土壤中均能生长，但以排水良好、富含腐殖质的微酸性砂壤土最为适宜。耐寒性中等，在-10℃以下低温时需防寒。</p>
+
+    <h2>分类学</h2>
+    <p>桂花为木犀科（Oleaceae）木犀属（<em>Osmanthus</em>）植物。种加词"<em>fragrans</em>"意为"芳香的"，精准描述了桂花最突出的特征——浓郁的花香。木犀属约有30种，分布于亚洲和北美洲的亚热带地区。桂花是中国十大传统名花之一，分为金桂、银桂、丹桂和四季桂四大品种群。《中国植物志》将其归为单一物种下的不同栽培品种。</p>
+
+    <h2>生态习性</h2>
+    <p>桂花性喜温暖湿润，大树喜光，幼树耐阴。对空气湿度要求较高，适宜在空气相对湿度70%以上的环境中生长。耐旱性中等，不耐积水。生长速度中等偏慢，但寿命极长，可达千年以上。桂花是秋季开花的经典树种，其"花不见树、香飘十里"的开花方式极具特色——花细小而不显眼，但香气极为浓郁。桂花的花香主要成分为γ-癸内酯、β-紫罗兰酮等挥发性化合物。桂花树冠圆润饱满，四季常青。</p>
+
+    <h2>利用与文化</h2>
+    <p>桂花是中国十大传统名花之一，有着2,500年以上的栽培历史。"桂"与"贵"谐音，寓意富贵吉祥。古人以"折桂"比喻科举及第。桂花可提取香精，用于食品、化妆品及香料工业。桂花制品种类繁多，包括桂花茶、桂花糕、桂花糖、桂花蜜等。合肥市将桂花选为市花。桂花也是中药材，有散寒破结、化痰止咳的功效。木材材质细密，纹理美观，是雕刻和工艺品的优质用材。桂花还是重要的蜜源植物，桂花蜜品质优良。</p>
+
+    <h2>参考文献</h2>
+    <ul><li>《中国植物志》第61卷: 107页. 科学出版社.</li><li>刘玉莲等. 2001. 桂花品种分类研究. 园艺学报.</li><li>杨康民. 2004. 桂花栽培与利用. 中国林业出版社.</li></ul>
+  </div>
+
+  <div class="infobox">
+    <div class="title">桂花</div>
+    <div class="img-wrap">
+      <img src="images/桂花.png" alt="桂花">
+      <div class="cap">桂花植物学插画（AI生成）</div>
+    </div>
+    <table>
+      <tr><th>界</th><td>植物界 <span class="sci">Plantae</span></td></tr>
+      <tr><th>门</th><td>被子植物门 <span class="sci">Angiospermae</span></td></tr>
+      <tr><th>纲</th><td>真双子叶植物纲</td></tr>
+      <tr><th>目</th><td>唇形目 Lamiales</td></tr>
+      <tr><th>科</th><td>木犀科 <span class="sci">Oleaceae</span></td></tr>
+      <tr><th>属</th><td>木犀属 <span class="sci">Osmanthus</span></td></tr>
+      <tr><th>种</th><td><strong>桂花</strong> <span class="sci">Osmanthus fragrans</span></td></tr>
+      <tr><th>学名</th><td><span class="sci">Osmanthus fragrans</span></td></tr>
+      <tr><th>英名</th><td>Sweet osmanthus / Fragrant olive</td></tr>
+      <tr><th>生活型</th><td>乔木</td></tr>
+      <tr><th>株高</th><td>3–10 m</td></tr>
+      <tr><th>花</th><td>聚伞花序腋生 · 极芳香 · 花期9–10月</td></tr>
+      <tr><th>果</th><td>核果椭圆形 · 紫黑色 · 翌年3月成熟</td></tr>
+      <tr><th>分布</th><td>长江以南广泛栽培 · 西南有野生</td></tr>
+      <tr><th>染色体</th><td>2n = 46</td></tr>
+      <tr><th>标签</th><td><span class="tag">十大名花</span> <span class="tag">合肥市花</span> <span class="tag">芳香植物</span> <span class="tag">蜜源植物</span></td></tr>
+    </table>
+  </div>
+
+</div></div>
+
+<div class="footer">
+  <div class="inner">
+    <a href="index.html" style="color:#4a7c2e;">← 返回首页</a> · 桂花（<em>Osmanthus fragrans</em>）· 植物百科
+  </div>
+</div>
+
+</body>
+</html>
