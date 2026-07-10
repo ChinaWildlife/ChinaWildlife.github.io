@@ -28,11 +28,11 @@ body{font-family:"PingFang SC","Noto Serif SC","Microsoft YaHei",serif;backgroun
 .chapter-header{text-align:center;padding:60px 40px;background:linear-gradient(135deg,var(--lite),#fff);margin-bottom:40px}
 .chapter-header h2{font-size:36px;color:var(--green);margin-bottom:8px}
 .chapter-header .desc{font-size:16px;color:var(--sub);max-width:600px;margin:0 auto}
-.species-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:28px;max-width:1200px;margin:0 auto;padding:0 24px}
+.species-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px;max-width:1200px;margin:0 auto;padding:0 24px}
 .species-card{background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.05);transition:transform .2s;break-inside:avoid}
 .species-card:hover{transform:translateY(-4px)}
-.species-img{width:100%;height:280px;background:linear-gradient(135deg,#e8f0e8,#d4e4d4);display:flex;align-items:center;justify-content:center;font-size:80px;position:relative;overflow:hidden}
-.species-img img{max-width:90%;max-height:90%;width:auto;height:auto;object-fit:contain;border-radius:8px}
+.species-img{width:100%;height:340px;background:linear-gradient(135deg,#e8f0e8,#d4e4d4);display:flex;align-items:center;justify-content:center;font-size:80px;position:relative;overflow:hidden}
+.species-img img{width:100%;height:100%;object-fit:cover;border-radius:0}
 .species-img .level-badge{position:absolute;top:12px;right:12px;padding:4px 12px;border-radius:12px;font-size:12px;font-weight:700;color:#fff}
 .level-1{background:var(--red)}
 .level-2{background:#e07b39}
@@ -522,7 +522,7 @@ nav.toc-fixed a:hover,nav.toc-fixed a.active{background:var(--green);color:#fff}
 
 <!-- 北山羊 -->
 <div class="species-card">
-  <div class="species-img"><span class="level-badge level-2">国家二级</span><img src="images/北山羊.png" alt="北山羊" style="width:100%;height:100%;object-fit:cover"></div>
+  <div class="species-img"><span class="level-badge level-2">国家二级</span><img src="images/北山羊.png" alt="北山羊" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div>
   <div class="species-body">
     <h3>北山羊</h3>
     <div class="latin"><em>Capra sibirica</em></div>
@@ -537,11 +537,11 @@ nav.toc-fixed a:hover,nav.toc-fixed a.active{background:var(--green);color:#fff}
 
 </div>
 <div class="species-card">
-  <div class="species-img"><span class="level-badge level-2">国家二级</span><span class="photo-badge">📷</span><img src="images/水獭.png" alt="水獭" style="width:100%;height:100%;object-fit:cover"></div>
+  <div class="species-img"><span class="level-badge level-2">国家二级</span><img src="images/水獭.png" alt="水獭" style="width:100%;height:100%;object-fit:cover"></div>
   <div class="species-body">
     <h3>水獭</h3>
     <div class="latin"><em>Lutra lutra</em></div>
-    <div class="tag-row"><span class="tag">食肉目</span><span class="tag">鼬科</span><span class="tag">IUCN:</span><span class="tag">近危</span><span class="tag">CITES:附录Ⅰ</span></div>
+    <div class="tag-row"><span class="tag">食肉目</span><span class="tag">鼬科</span><span class="tag">IUCN: 近危</span><span class="tag">CITES:附录Ⅰ</span></div>
     <div class="section-label">📝 外貌特征</div>
     <p>体长55-82厘米，体重5-14千克。身体细长流线型，四肢短小有蹼，尾巴粗长有力。全身被毛短而密，背部深褐色，腹部颜色较浅。头部扁平宽大，耳朵小，胡须发达。有着极佳的游泳能力，在水中可闭气4-8分钟。</p>
     <div class="section-label">🗺️ 分布区域</div>
@@ -550,16 +550,16 @@ nav.toc-fixed a:hover,nav.toc-fixed a.active{background:var(--green);color:#fff}
     <p>栖息于河流、湖泊、沼泽等淡水湿地，也见于沿海红树林。半水栖生活，擅长游泳和潜水。独居或小家族群居，夜行性。以鱼类为主食，也吃蛙、蟹、水鸟等。在河岸挖洞筑巢，巢穴入口常在水面以下。领域意识强，用气味标记领地。</p>
     <div class="section-label">🛡️ 保护故事</div>
     <p>由于非法捕猎（水獭皮在皮草市场价值极高）、水体污染和栖息地破坏，中国水獭种群锐减超过90%。近年来各地开展水生态环境修复，部分区域已出现水獭重新回归的喜人迹象。青海三江源和四川唐家河是重要的水獭保护地。</p>
-    <div class="fun-fact" style="font-size:12px;color:#888;text-align:center;">📷 实拍照片查看 <a href="images/水獭_实拍.jpg" target="_blank" style="color:#2d6a4f;">点击这里</a></div>
+    
     <div class="fun-fact">水獭是动物界的"团宠"——它们会手拉手漂浮在水面上睡觉防止被水流冲散！水獭妈妈在水里教幼崽捕猎时，会像人类妈妈一样"手把手"地耐心引导。</div>
   </div>
 </div>
 <div class="species-card">
-  <div class="species-img"><span class="level-badge level-2">国家二级</span><span class="photo-badge">📷</span><img src="images/豹猫.png" alt="豹猫" style="width:100%;height:100%;object-fit:cover"></div>
+  <div class="species-img"><span class="level-badge level-2">国家二级</span><img src="images/豹猫.png" alt="豹猫" style="width:100%;height:100%;object-fit:cover"></div>
   <div class="species-body">
     <h3>豹猫</h3>
     <div class="latin"><em>Prionailurus bengalensis</em></div>
-    <div class="tag-row"><span class="tag">食肉目</span><span class="tag">猫科</span><span class="tag">IUCN:</span><span class="tag">无危</span><span class="tag">CITES:附录Ⅱ</span></div>
+    <div class="tag-row"><span class="tag">食肉目</span><span class="tag">猫科</span><span class="tag">IUCN: 无危</span><span class="tag">CITES:附录Ⅱ</span></div>
     <div class="section-label">📝 外貌特征</div>
     <p>体型与家猫相似但更纤细，体长45-75厘米，尾长23-35厘米，体重3-7千克。全身布满黑褐色斑点或斑纹，耳大而圆，耳背有白色斑。是中国分布最广的野生猫科动物。依据地域差异，体色从浅黄到灰褐色不等。</p>
     <div class="section-label">🗺️ 分布区域</div>
@@ -568,16 +568,16 @@ nav.toc-fixed a:hover,nav.toc-fixed a.active{background:var(--green);color:#fff}
     <p>栖息地类型多样，从温带森林、亚热带丛林到热带雨林、红树林均有分布。树栖和地栖兼备，善于攀爬。独居，夜行性，以小型哺乳动物、鸟类、爬行动物为食。领地范围因食物丰度而异，通常1-5平方公里。</p>
     <div class="section-label">🛡️ 保护故事</div>
     <p>豹猫曾因毛皮贸易被大量捕杀。1989年被列为国家二级保护动物后，非法贸易大幅减少。但栖息地破碎化仍是主要威胁。南方部分地区豹猫与家猫杂交导致基因污染，也是需要关注的问题。</p>
-    <div class="fun-fact" style="font-size:12px;color:#888;text-align:center;">📷 实拍照片查看 <a href="images/豹猫_实拍.jpg" target="_blank" style="color:#2d6a4f;">点击这里</a></div>
+    
     <div class="fun-fact">豹猫的斑纹像极了金钱豹，所以得了"豹猫"这个名字。但它们的体型其实和普通家猫差不多大！在东南亚一些地区，豹猫被视为"活化石"猫科动物——它们的祖先早在500万年前就已出现。</div>
   </div>
 </div>
 <div class="species-card">
-  <div class="species-img"><span class="level-badge level-2">国家二级</span><span class="photo-badge">📷</span><img src="images/藏酋猴.png" alt="藏酋猴" style="width:100%;height:100%;object-fit:cover"></div>
+  <div class="species-img"><span class="level-badge level-2">国家二级</span><img src="images/藏酋猴.png" alt="藏酋猴" style="width:100%;height:100%;object-fit:cover"></div>
   <div class="species-body">
     <h3>藏酋猴</h3>
     <div class="latin"><em>Macaca thibetana</em></div>
-    <div class="tag-row"><span class="tag">灵长目</span><span class="tag">猴科</span><span class="tag">IUCN:</span><span class="tag">近危</span><span class="tag">中国特有</span></div>
+    <div class="tag-row"><span class="tag">灵长目</span><span class="tag">猴科</span><span class="tag">IUCN: 近危</span><span class="tag">中国特有</span></div>
     <div class="section-label">📝 外貌特征</div>
     <p>中国最大的猕猴属动物，体长51-71厘米，体重10-25千克。成年雄猴面部呈肉红色或暗红色，颊毛发达。全身被毛厚密，背部深褐色至黑色，腹部浅灰色。幼猴毛色较浅。尾巴短小，仅5-7厘米。</p>
     <div class="section-label">🗺️ 分布区域</div>
@@ -586,16 +586,16 @@ nav.toc-fixed a:hover,nav.toc-fixed a.active{background:var(--green);color:#fff}
     <p>栖息于亚热带和温带山地森林，海拔500-2,500米。常成群活动，每群10-50只，含多只成年雄猴、雌猴和幼仔。以果实、种子、嫩叶、花蕾为食，也吃昆虫和小型动物。在半自然状态下（如旅游区），有向游客索食的习惯。</p>
     <div class="section-label">🛡️ 保护故事</div>
     <p>藏酋猴在旅游风景区常因与游客近距离接触而面临"过度投喂"问题。长期食用人类食物导致其行为改变、营养失衡和疾病传播。各景区已逐步实施"禁喂令"。此外，路杀和栖息地破碎也是其面临的威胁。</p>
-    <div class="fun-fact" style="font-size:12px;color:#888;text-align:center;">📷 实拍照片查看 <a href="images/藏酋猴_实拍.jpg" target="_blank" style="color:#2d6a4f;">点击这里</a></div>
+    
     <div class="fun-fact">峨眉山的藏酋猴是最著名的"猴哥"！它们会拦路向游客要食物，甚至会熟练拉开游客的背包拉链找吃的。科学家发现藏酋猴有复杂的等级社会结构，猴王通常是通过打斗晋升的壮年雄猴。</div>
   </div>
 </div>
 <div class="species-card">
-  <div class="species-img"><span class="level-badge level-1">国家一级</span><span class="photo-badge">📷</span><img src="images/川金丝猴.png" alt="川金丝猴" style="width:100%;height:100%;object-fit:cover"></div>
+  <div class="species-img"><span class="level-badge level-1">国家一级</span><img src="images/川金丝猴.png" alt="川金丝猴" style="width:100%;height:100%;object-fit:cover"></div>
   <div class="species-body">
     <h3>川金丝猴</h3>
     <div class="latin"><em>Rhinopithecus roxellana</em></div>
-    <div class="tag-row"><span class="tag">灵长目</span><span class="tag">猴科</span><span class="tag">IUCN:</span><span class="tag">濒危</span><span class="tag">中国特有</span></div>
+    <div class="tag-row"><span class="tag">灵长目</span><span class="tag">猴科</span><span class="tag">IUCN: 濒危</span><span class="tag">中国特有</span></div>
     <div class="section-label">📝 外貌特征</div>
     <p>体长57-76厘米，尾长51-72厘米，体重15-39千克。最具标志性的是全身金橙色长毛，脸部天蓝色，鼻子上翘呈"朝天鼻"。成年雄猴嘴角有明显的肉瘤。是中国四种金丝猴（川金丝猴、滇金丝猴、黔金丝猴、怒江金丝猴）中最著名的一种。</p>
     <div class="section-label">🗺️ 分布区域</div>
@@ -604,17 +604,17 @@ nav.toc-fixed a:hover,nav.toc-fixed a.active{background:var(--green);color:#fff}
     <p>以地衣（特别是松萝）、嫩芽、果实为食，也吃昆虫和鸟蛋。群居生活，每群数10至数百只。具有复杂的多层级社会结构（一雄多雌家庭→分队→群）。冬季会向低海拔迁移。善于跳跃，能在树枝间飞跃数米。</p>
     <div class="section-label">🛡️ 保护故事</div>
     <p>川金丝猴是国宝级珍稀动物，与大熊猫同域分布，被誉为"林中精灵"。经过数十年的保护，野外种群从20世纪80年代的约2万只恢复至目前的约2.5万只。神农架、秦岭、九寨沟是主要保护地。</p>
-    <div class="fun-fact" style="font-size:12px;color:#888;text-align:center;">📷 实拍照片查看 <a href="images/川金丝猴_实拍.jpg" target="_blank" style="color:#2d6a4f;">点击这里</a></div>
+    
     <div class="fun-fact">川金丝猴的"朝天鼻"在灵长类中独一无二——据说是因为它们生活在高海拔地区，上翘的鼻孔可以防止冷空气直接进入鼻腔！另外，川金丝猴的学名roxellana来自一位俄罗斯贵妇的名字，因为法语传教士觉得它的鼻子像那位贵妇。</div>
   </div>
 </div>
 
 <div class="species-card">
-  <div class="species-img"><span class="level-badge level-1">国家一级</span><span class="photo-badge">📷</span><img src="images/秃鹫.png" alt="秃鹫" style="width:100%;height:100%;object-fit:cover"></div>
+  <div class="species-img"><span class="level-badge level-1">国家一级</span><img src="images/秃鹫.png" alt="秃鹫" style="width:100%;height:100%;object-fit:cover"></div>
   <div class="species-body">
     <h3>秃鹫</h3>
     <div class="latin"><em>Aegypius monachus</em></div>
-    <div class="tag-row"><span class="tag">鹰形目</span><span class="tag">鹰科</span><span class="tag">IUCN:</span><span class="tag">近危</span><span class="tag">大型猛禽</span></div>
+    <div class="tag-row"><span class="tag">鹰形目</span><span class="tag">鹰科</span><span class="tag">IUCN: 近危</span><span class="tag">大型猛禽</span></div>
     <div class="section-label">📝 外貌特征</div>
     <p>中国最大的猛禽之一！体长100-120厘米，翼展可达2.5-3米，体重7-12.5千克。全身暗褐色，头部和颈部裸露无羽，仅有稀疏的绒羽。喙粗壮有力，呈钩状。与高山秃鹫的区别在于：秃鹫体型更大，头颈部全裸无羽，翼展更宽。</p>
     <div class="section-label">🗺️ 分布区域</div>
@@ -623,16 +623,16 @@ nav.toc-fixed a:hover,nav.toc-fixed a.active{background:var(--green);color:#fff}
     <p>栖息于开阔的山地草原、荒漠和半荒漠地区，常在高山岩石或大树顶端筑巢。以动物尸体为食，是重要的生态清道夫。常在高空盘旋寻找食物，凭敏锐的视觉发现数公里外的尸体。群居性，常数十只聚集在食物源周围。</p>
     <div class="section-label">🛡️ 保护故事</div>
     <p>秃鹫在中国数量稀少，野外总数估计不足1万只。主要威胁包括：误食被毒杀的动物尸体而二次中毒、栖息地退化和食物源减少。部分地区仍有非法猎杀用于传统医药。近年各自然保护区加强了对腐食性猛禽的保护。</p>
-    <div class="fun-fact" style="font-size:12px;color:#888;text-align:center;">📷 实拍照片查看 <a href="images/秃鹫_实拍.jpg" target="_blank" style="color:#2d6a4f;">点击这里</a></div>
+    
     <div class="fun-fact">秃鹫的光头是"自然设计"——吃腐肉时没有羽毛才不会沾满血迹和细菌！而且秃鹫的胃酸极强（pH接近0），可以安全消化腐烂尸体中的炭疽、狂犬病等致命病菌，是生态系统中真正的"清洁工"。</div>
   </div>
 </div>
 <div class="species-card">
-  <div class="species-img"><span class="level-badge level-2">国家二级</span><span class="photo-badge">📷</span><img src="images/草原鹞.png" alt="草原鹞" style="width:100%;height:100%;object-fit:cover"></div>
+  <div class="species-img"><span class="level-badge level-2">国家二级</span><img src="images/草原鹞.png" alt="草原鹞" style="width:100%;height:100%;object-fit:cover"></div>
   <div class="species-body">
     <h3>草原鹞</h3>
     <div class="latin"><em>Circus macrourus</em></div>
-    <div class="tag-row"><span class="tag">鹰形目</span><span class="tag">鹰科</span><span class="tag">IUCN:</span><span class="tag">近危</span><span class="tag">迁徙猛禽</span></div>
+    <div class="tag-row"><span class="tag">鹰形目</span><span class="tag">鹰科</span><span class="tag">IUCN: 近危</span><span class="tag">迁徙猛禽</span></div>
     <div class="section-label">📝 外貌特征</div>
     <p>中型猛禽，体长40-48厘米，翼展95-110厘米。雄性上体灰色，下体白色，翼尖黑色，腰部白色明显。雌性上体褐色，下体有纵纹。与白尾鹞极相似，但草原鹞的翅更窄尖，腰部白色斑更大。飞行时翅膀呈浅V形抬起，姿态优雅。</p>
     <div class="section-label">🗺️ 分布区域</div>
@@ -641,16 +641,16 @@ nav.toc-fixed a:hover,nav.toc-fixed a.active{background:var(--green);color:#fff}
     <p>栖息于开阔的草原、草甸和农田。低空飞行，以小型哺乳动物、鸟类、蜥蜴和大型昆虫为食。在草原地面筑巢，巢由草茎搭建。繁殖期4-7月，每窝产3-5枚卵。雌鸟孵卵，雄鸟负责提供食物。</p>
     <div class="section-label">🛡️ 保护故事</div>
     <p>草原鹞是草原生态系统的指示物种。由于草原过度放牧、开垦和杀虫剂使用，其栖息地持续退化。迁徙路线上的盗猎也是威胁之一。保护草原生态系统对草原鹞的存续至关重要。</p>
-    <div class="fun-fact" style="font-size:12px;color:#888;text-align:center;">📷 实拍照片查看 <a href="images/草原鹞_实拍.jpg" target="_blank" style="color:#2d6a4f;">点击这里</a></div>
+    
     <div class="fun-fact">鹞类的飞行堪称"直升机"——它们可以在几乎不拍翅的情况下长时间低空滑翔，利用地面上升的热气流保持高度。这种节能飞行方式让它们可以在广阔草原上持续巡逻数小时！</div>
   </div>
 </div>
 <div class="species-card">
-  <div class="species-img"><span class="level-badge level-2">国家二级</span><span class="photo-badge">📷</span><img src="images/短耳鸮.png" alt="短耳鸮" style="width:100%;height:100%;object-fit:cover"></div>
+  <div class="species-img"><span class="level-badge level-2">国家二级</span><img src="images/短耳鸮.png" alt="短耳鸮" style="width:100%;height:100%;object-fit:cover"></div>
   <div class="species-body">
     <h3>短耳鸮</h3>
     <div class="latin"><em>Asio flammeus</em></div>
-    <div class="tag-row"><span class="tag">鸮形目</span><span class="tag">鸱鸮科</span><span class="tag">IUCN:</span><span class="tag">无危</span><span class="tag">日行性猫头鹰</span></div>
+    <div class="tag-row"><span class="tag">鸮形目</span><span class="tag">鸱鸮科</span><span class="tag">IUCN: 无危</span><span class="tag">日行性猫头鹰</span></div>
     <div class="section-label">📝 外貌特征</div>
     <p>中型猫头鹰，体长34-43厘米，翼展85-110厘米。上体棕褐色具纵纹，下体浅色有纵斑。面盘圆形，眼周黑色，虹膜亮黄色。耳羽极短（多数情况下几乎不可见），这是与长耳鸮最明显的外形区别。飞行时翅膀宽阔，翅下可见明显的黑色腕斑。</p>
     <div class="section-label">🗺️ 分布区域</div>
@@ -659,16 +659,16 @@ nav.toc-fixed a:hover,nav.toc-fixed a.active{background:var(--green);color:#fff}
     <p>喜欢开阔的草地、沼泽、湿地和农田。日行性（白天活动），常在黄昏前后最为活跃。在地面筑巢，巢极简单仅略加铺垫。以田鼠、仓鼠等小型啮齿动物为主食，也吃小鸟和大型昆虫。是控制农田鼠害的重要天敌。</p>
     <div class="section-label">🛡️ 保护故事</div>
     <p>短耳鸮因农田灭鼠而被视为益鸟，但冬季农田翻耕使其越冬栖息地受到破坏。此外，公路沿线的路杀也是威胁之一（低空飞行易被车辆撞击）。设置人工巢穴和减少冬季农田翻耕可有效保护它们。</p>
-    <div class="fun-fact" style="font-size:12px;color:#888;text-align:center;">📷 实拍照片查看 <a href="images/短耳鸮_实拍.jpg" target="_blank" style="color:#2d6a4f;">点击这里</a></div>
+    
     <div class="fun-fact">短耳鸮是少数"白天上班"的猫头鹰！大多数猫头鹰是夜行性，而短耳鸮白天就出来捕猎了——你可以用望远镜在白天的草原上观察到它们低空搜索猎物的身影。而且它们的振翅声比其他猫头鹰大，被戏称为"莽撞的飞行者"。</div>
   </div>
 </div>
 <div class="species-card">
-  <div class="species-img"><span class="level-badge level-2">国家二级</span><span class="photo-badge">📷</span><img src="images/高山秃鹫.png" alt="高山秃鹫" style="width:100%;height:100%;object-fit:cover"></div>
+  <div class="species-img"><span class="level-badge level-2">国家二级</span><img src="images/高山秃鹫.png" alt="高山秃鹫" style="width:100%;height:100%;object-fit:cover"></div>
   <div class="species-body">
     <h3>高山秃鹫</h3>
     <div class="latin"><em>Gyps himalayensis</em></div>
-    <div class="tag-row"><span class="tag">鹰形目</span><span class="tag">鹰科</span><span class="tag">IUCN:</span><span class="tag">近危</span><span class="tag">高海拔清道夫</span></div>
+    <div class="tag-row"><span class="tag">鹰形目</span><span class="tag">鹰科</span><span class="tag">IUCN: 近危</span><span class="tag">高海拔清道夫</span></div>
     <div class="section-label">📝 外貌特征</div>
     <p>大型猛禽，体长95-115厘米，翼展2.6-2.9米，体重8-12千克。全身浅褐色，头部有白色绒毛，颈基部有蓬松的白色领羽。与秃鹫的区别：高山秃鹫头颈部有白色绒毛覆盖（非全裸），体型稍小，领部有白色羽毛。</p>
     <div class="section-label">🗺️ 分布区域</div>
@@ -677,12 +677,12 @@ nav.toc-fixed a:hover,nav.toc-fixed a.active{background:var(--green);color:#fff}
     <p>栖息于高山草甸、荒漠和雪线附近的岩石山地。以动物尸体为食，在青藏高原被称为"高原清洁工"。经常在高空大范围盘旋寻找食物。群居，在悬崖峭壁上筑巢。在天葬文化中有重要地位——藏传佛教视其为"空行母"的化身。</p>
     <div class="section-label">🛡️ 保护故事</div>
     <p>在青藏高原，高山秃鹫曾因藏药采集和误食有毒动物尸体而数量下降。近年来，随着对天葬文化的保护和双氯芬酸（一种对秃鹫致命的兽药）的管控，种群趋于稳定。保护区内的高山秃鹫种群受到较好保护。</p>
-    <div class="fun-fact" style="font-size:12px;color:#888;text-align:center;">📷 实拍照片查看 <a href="images/高山秃鹫_实拍.png" target="_blank" style="color:#2d6a4f;">点击这里</a></div>
+    
     <div class="fun-fact">高山秃鹫能飞到9,000米以上的高空——比民航客机的巡航高度还高！它们利用极强的视力从数公里外发现尸体，然后以超过100公里/小时的速度俯冲下来。在青藏高原的天葬中，高山秃鹫被视为将逝者灵魂带入天堂的神圣使者。</div>
   </div>
 </div>
 <div class="species-card">
-  <div class="species-img"><span class="level-badge level-1">国家一级</span><span class="photo-badge">📷</span><img src="images/黑头噪鸦.png" alt="黑头噪鸦" style="width:100%;height:100%;object-fit:cover"></div>
+  <div class="species-img"><span class="level-badge level-1">国家一级</span><img src="images/黑头噪鸦.png" alt="黑头噪鸦" style="width:100%;height:100%;object-fit:cover"></div>
   <div class="species-body">
     <h3>黑头噪鸦</h3>
     <div class="latin"><em>Garrulus lanceolatus? / Nucifraga? / local species</em></div>
@@ -695,16 +695,16 @@ nav.toc-fixed a:hover,nav.toc-fixed a.active{background:var(--green);color:#fff}
     <p>栖息于海拔2,000-3,500米的针叶林和针阔混交林中。以松子、浆果和昆虫为食，具有储藏食物的习性。常单独或成小群活动。叫声响亮多变。由于栖息地海拔高、环境偏远，野外研究极其困难。</p>
     <div class="section-label">🛡️ 保护故事</div>
     <p>黑头噪鸦是中国国家一级保护动物中数量最稀少的鸟类之一。由于分布范围极小、种群数量极端稀少，被列为国家一级保护动物。保护其栖息的高山原始针叶林是保护该物种的最重要措施。</p>
-    <div class="fun-fact" style="font-size:12px;color:#888;text-align:center;">📷 实拍照片查看 <a href="images/黑头噪鸦_实拍.jpg" target="_blank" style="color:#2d6a4f;">点击这里</a></div>
+    
     <div class="fun-fact">黑头噪鸦被视为"最神秘"的中国珍稀鸟类之一——因为数量极其稀少且生活在人迹罕至的高海拔地区，就连鸟类学家也很难在野外见到它。它们会像松鼠一样储藏松子过冬，记忆力惊人，能在雪地下准确找到数月前藏匿的食物！</div>
   </div>
 </div>
 <div class="species-card">
-  <div class="species-img"><span class="level-badge level-2">国家二级</span><span class="photo-badge">📷</span><img src="images/红隼.png" alt="红隼" style="width:100%;height:100%;object-fit:cover"></div>
+  <div class="species-img"><span class="level-badge level-2">国家二级</span><img src="images/红隼.png" alt="红隼" style="width:100%;height:100%;object-fit:cover"></div>
   <div class="species-body">
     <h3>红隼</h3>
     <div class="latin"><em>Falco tinnunculus</em></div>
-    <div class="tag-row"><span class="tag">隼形目</span><span class="tag">隼科</span><span class="tag">IUCN:</span><span class="tag">无危</span><span class="tag">小型猛禽</span></div>
+    <div class="tag-row"><span class="tag">隼形目</span><span class="tag">隼科</span><span class="tag">IUCN: 无危</span><span class="tag">小型猛禽</span></div>
     <div class="section-label">📝 外貌特征</div>
     <p>中国最常见的小型猛禽之一。体长31-37厘米，翼展68-78厘米，体重140-300克。雌雄异色：雄鸟头部灰色，背部红褐色有黑斑，尾灰色末端有黑色横带；雌鸟整体红褐色，全身有密集黑色纵纹。所有个体翅下有黑色斑块。飞行时尾羽展开呈扇形。</p>
     <div class="section-label">🗺️ 分布区域</div>
@@ -713,7 +713,7 @@ nav.toc-fixed a:hover,nav.toc-fixed a.active{background:var(--green);color:#fff}
     <p>栖息地从开阔田野、草原到城市高楼区均有分布。著名特征为"悬停"捕食——可在空中定点扇翅停留，精准发现地面上的鼠类和昆虫。以鼠类（主食）、小型鸟类、蜥蜴和大型昆虫为食。利用树洞、岩缝或废弃建筑筑巢。在城市中常利用高楼窗台和桥梁空隙筑巢。</p>
     <div class="section-label">🛡️ 保护故事</div>
     <p>红隼是目前中国城市中最为常见的猛禽，在多个大城市的中心区域均有繁殖记录。虽然整体种群状况较好，但城市中的鼠药使用对红隼构成间接威胁（吃中毒老鼠后二次中毒）。推荐在城市中使用物理灭鼠方法以保护这些"城市猎人"。</p>
-    <div class="fun-fact" style="font-size:12px;color:#888;text-align:center;">📷 实拍照片查看 <a href="images/红隼_实拍.jpg" target="_blank" style="color:#2d6a4f;">点击这里</a></div>
+    
     <div class="fun-fact">红隼被称为"空中直升机"——它们能精准地在半空中悬停长达20秒，翅膀快速扇动，尾巴展开保持平衡，一旦发现猎物就以30°角俯冲而下！这种悬停捕猎的能力在猛禽中极少见。它们的视力比人类好2.6倍，能在30米高空看清地面的小老鼠。</div>
   </div>
 </div>

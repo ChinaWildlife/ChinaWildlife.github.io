@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>藏酋猴 - 动物百科</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#f5f5f5;color:#333;line-height:1.8;font-size:15px}
+  .topbar{background:#1b4332;color:#fff;padding:14px 0;font-size:13px}
+  .topbar .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+  .topbar a{color:#cde0c0;text-decoration:none}
+  .topbar a:hover{color:#fff}
+  .topbar span{color:#8aaa78;margin:0 6px}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+  .main{display:flex;gap:30px;margin-top:20px;align-items:flex-start}
+  .content{flex:1;min-width:0;background:#fff;border-radius:3px;box-shadow:0 1px 3px rgba(0,0,0,.08);padding:30px 35px}
+  .content h1{font-size:28px;font-weight:600;color:#222;margin-bottom:2px}
+  .content h1 small{font-weight:400;font-size:18px;color:#666;margin-left:8px}
+  .content .sub{color:#999;font-size:13px;margin-bottom:20px;padding-bottom:15px;border-bottom:1px solid #eee}
+  .content h2{font-size:18px;font-weight:600;color:#1b4332;margin:28px 0 12px;padding-left:12px;border-left:3px solid #2d6a4f}
+  .content p{margin:8px 0;text-indent:2em;text-align:justify}
+  .infobox{width:300px;flex-shrink:0;background:#fff;border-radius:3px;box-shadow:0 1px 3px rgba(0,0,0,.08);overflow:hidden}
+  .infobox .title{background:#1b4332;color:#fff;text-align:center;padding:12px;font-size:16px;font-weight:600;letter-spacing:1px}
+  .infobox .img-wrap{padding:12px;background:#fafafa;text-align:center;border-bottom:1px solid #eee}
+  .infobox .img-wrap img{max-width:100%;max-height:220px;display:block;margin:0 auto}
+  .infobox .img-wrap .cap{font-size:12px;color:#999;margin-top:6px}
+  .infobox table{width:100%;border-collapse:collapse;font-size:13px}
+  .infobox table th{background:#f4f7f2;padding:6px 10px;width:70px;font-weight:600;color:#444;text-align:right;border-bottom:1px solid #e8e8e8;font-size:12px;vertical-align:top}
+  .infobox table td{padding:6px 10px;border-bottom:1px solid #e8e8e8;color:#333;vertical-align:top}
+  .infobox table .sci{font-style:italic;color:#555}
+  .tag{display:inline-block;background:#eef6ea;color:#1b4332;font-size:11px;padding:1px 8px;border-radius:8px;margin:1px 2px}
+  .footer{max-width:1100px;margin:20px auto;padding:0 20px}
+  .footer .inner{background:#fff;border-radius:3px;box-shadow:0 1px 3px rgba(0,0,0,.08);padding:20px 35px;font-size:13px;color:#999;text-align:center}
+  @media(max-width:800px){.main{flex-direction:column-reverse}.infobox{width:100%}.content{padding:20px}.content h1{font-size:22px}.content h1 small{font-size:15px}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="index.html">🐾 中国动物百科</a>
+    <span>></span>
+    <a href="#">哺乳纲</a>
+    <span>></span>
+    <a href="#">灵长目</a>
+    <span>></span>
+    <strong>藏酋猴</strong>
+  </div>
+</div>
+
+<div class="wrap">
+<div class="main">
+
+  <div class="content">
+    <h1>藏酋猴 <small>Macaca thibetana</small></h1>
+    <div class="sub">中国体型最大的猕猴属动物 · 峨眉山"猴哥" · 中国特有灵长类</div>
+
+    <div style="float:right;margin:0 0 12px 20px;width:280px;border:1px solid #eee;border-radius:3px;padding:8px;background:#fafafa;text-align:center">
+      <img src="images/藏酋猴.png" style="max-width:100%;max-height:200px">
+      <div style="font-size:12px;color:#999;margin-top:4px">藏酋猴 动物学插画（AI生成）</div>
+    </div>
+
+    <h2>形态特征</h2>
+    <p>中国最大的猕猴属物种，体长51-71厘米，尾极短仅5-7厘米，体重10-25千克。成年雄猴面部肉红色，颊部有发达的颊毛向两侧蓬松展开。全身被毛厚密，背部和四肢外侧深褐色至黑褐色，腹面浅灰色。幼猴面部和毛色均较浅。最显著的特征是短小的尾巴和壮硕的体型，与常见的猕猴（恒河猴）体型差异显著。</p>
+
+    <h2>分布与生境</h2>
+    <p>中国特有物种，分布于四川、云南、贵州、西藏东部、陕西南部、湖北、湖南、江西、安徽、广西等地海拔500-2,500米的亚热带和温带山地森林中。峨眉山、黄山、张家界等著名风景区均有稳定种群。</p>
+
+    <h2>生活习性</h2>
+    <p>群居生活，每群10-50只不等，含多只成年雄猴、雌猴及其后代。社会结构严谨，有明确的等级制度——猴王通过力量竞争上位，享有优先交配和取食权。杂食性，以果实、种子、嫩叶、花蕾为主食，也吃昆虫、鸟蛋和小型脊椎动物。在半自然旅游环境下，会向游客主动索食，具有极强的学习和模仿能力。</p>
+
+    <h2>保护现状</h2>
+    <p>旅游开发导致的"过度投喂"是藏酋猴面临的最突出问题。长期摄入人类加工食品导致其营养失衡、行为异常（攻击性增强、乞食成瘾）和疾病传播。各景区已实施"禁喂令"，但执行效果参差不齐。此外，路杀事件（穿越公路时被车撞）和生境破碎化也是其面临的重要威胁。</p>
+  </div>
+
+  <div class="infobox">
+    <div class="title">藏酋猴</div>
+    <div class="img-wrap">
+      <img src="images/藏酋猴.png" alt="藏酋猴">
+      <div class="cap">藏酋猴 AI插画</div>
+    </div>
+    <table>
+      <tr><th>界</th><td>动物界 <span class="sci">Animalia</span></td></tr>
+      <tr><th>门</th><td>脊索动物门 <span class="sci">Chordata</span></td></tr>
+      <tr><th>纲</th><td>哺乳纲</td></tr>
+      <tr><th>目</th><td>灵长目</td></tr>
+      <tr><th>科</th><td>猴科</td></tr>
+      <tr><th>属</th><td><span class="sci">Macaca</span></td></tr>
+      <tr><th>种</th><td><strong>藏酋猴</strong> <span class="sci">Macaca thibetana</span></td></tr>
+      <tr><th>英文名</th><td>Tibetan Macaque</td></tr>
+      <tr><th>保护级别</th><td>国家二级重点保护</td></tr>
+      <tr><th>IUCN</th><td>近危 (NT)</td></tr>
+      <tr><th>标签</th><td><span class="tag">中国特有</span> <span class="tag">体型最大猕猴</span> <span class="tag">峨眉山</span></td></tr>
+    </table>
+  </div>
+
+</div></div>
+
+<div class="footer">
+  <div class="inner">
+    <a href="index.html" style="color:#2d6a4f">← 返回首页</a> · 藏酋猴（<em>Macaca thibetana</em>）· 中国动物百科
+  </div>
+</div>
+
+</body>
+</html>

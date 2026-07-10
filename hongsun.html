@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>红隼 - 动物百科</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#f5f5f5;color:#333;line-height:1.8;font-size:15px}
+  .topbar{background:#1b4332;color:#fff;padding:14px 0;font-size:13px}
+  .topbar .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+  .topbar a{color:#cde0c0;text-decoration:none}
+  .topbar a:hover{color:#fff}
+  .topbar span{color:#8aaa78;margin:0 6px}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+  .main{display:flex;gap:30px;margin-top:20px;align-items:flex-start}
+  .content{flex:1;min-width:0;background:#fff;border-radius:3px;box-shadow:0 1px 3px rgba(0,0,0,.08);padding:30px 35px}
+  .content h1{font-size:28px;font-weight:600;color:#222;margin-bottom:2px}
+  .content h1 small{font-weight:400;font-size:18px;color:#666;margin-left:8px}
+  .content .sub{color:#999;font-size:13px;margin-bottom:20px;padding-bottom:15px;border-bottom:1px solid #eee}
+  .content h2{font-size:18px;font-weight:600;color:#1b4332;margin:28px 0 12px;padding-left:12px;border-left:3px solid #2d6a4f}
+  .content p{margin:8px 0;text-indent:2em;text-align:justify}
+  .infobox{width:300px;flex-shrink:0;background:#fff;border-radius:3px;box-shadow:0 1px 3px rgba(0,0,0,.08);overflow:hidden}
+  .infobox .title{background:#1b4332;color:#fff;text-align:center;padding:12px;font-size:16px;font-weight:600;letter-spacing:1px}
+  .infobox .img-wrap{padding:12px;background:#fafafa;text-align:center;border-bottom:1px solid #eee}
+  .infobox .img-wrap img{max-width:100%;max-height:220px;display:block;margin:0 auto}
+  .infobox .img-wrap .cap{font-size:12px;color:#999;margin-top:6px}
+  .infobox table{width:100%;border-collapse:collapse;font-size:13px}
+  .infobox table th{background:#f4f7f2;padding:6px 10px;width:70px;font-weight:600;color:#444;text-align:right;border-bottom:1px solid #e8e8e8;font-size:12px;vertical-align:top}
+  .infobox table td{padding:6px 10px;border-bottom:1px solid #e8e8e8;color:#333;vertical-align:top}
+  .infobox table .sci{font-style:italic;color:#555}
+  .tag{display:inline-block;background:#eef6ea;color:#1b4332;font-size:11px;padding:1px 8px;border-radius:8px;margin:1px 2px}
+  .footer{max-width:1100px;margin:20px auto;padding:0 20px}
+  .footer .inner{background:#fff;border-radius:3px;box-shadow:0 1px 3px rgba(0,0,0,.08);padding:20px 35px;font-size:13px;color:#999;text-align:center}
+  @media(max-width:800px){.main{flex-direction:column-reverse}.infobox{width:100%}.content{padding:20px}.content h1{font-size:22px}.content h1 small{font-size:15px}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="index.html">🐾 中国动物百科</a>
+    <span>></span>
+    <a href="#">鸟纲</a>
+    <span>></span>
+    <a href="#">隼形目</a>
+    <span>></span>
+    <strong>红隼</strong>
+  </div>
+</div>
+
+<div class="wrap">
+<div class="main">
+
+  <div class="content">
+    <h1>红隼 <small>Falco tinnunculus</small></h1>
+    <div class="sub">中国最常见的猛禽 · "空中直升机"悬停猎手 · 与大熊猫共用同一片栖息地</div>
+
+    <div style="float:right;margin:0 0 12px 20px;width:280px;border:1px solid #eee;border-radius:3px;padding:8px;background:#fafafa;text-align:center">
+      <img src="images/红隼.png" style="max-width:100%;max-height:200px">
+      <div style="font-size:12px;color:#999;margin-top:4px">红隼 动物学插画（AI生成）</div>
+    </div>
+
+    <h2>形态特征</h2>
+    <p>中国最常见的小型猛禽之一，体长31-37厘米，翼展68-78厘米，体重仅140-300克。雌雄异色：成年雄鸟头部和尾羽为蓝灰色，背部红褐色具黑色斑点，尾部末端有宽阔的黑色横带；雌鸟和幼鸟整体呈红褐色，全身密布黑色纵纹。所有个体翅下均有明显的黑色斑块。喙短而弯，足黄色，爪尖锐。飞行时尾羽常展开呈扇形，姿态优雅。</p>
+
+    <h2>分布与生境</h2>
+    <p>对生境的适应性极强——从开阔草原、农田、荒漠到城市中心的高楼大厦均有繁殖记录，是中国城市中最常见的猛禽。在野外，偏好半开阔景观：农田镶嵌林地、草原边缘、河谷地带。在城市中，利用高楼窗台、桥墩缝隙和废弃建筑筑巢。</p>
+
+    <h2>生活习性</h2>
+    <p>以独特的"悬停"捕猎技巧闻名——可在半空中精准定点，头部保持完全静止而身体随风微调，翅膀快速扇动尾巴展开保持平衡，如同悬浮在空中的直升机。一旦发现猎物（主要依靠紫外线视觉——可通过鼠类尿液标记定位），即以约30°角俯冲而下。主食为小型啮齿动物（田鼠占70%以上），也捕食小鸟、蜥蜴和大型昆虫。在城市中，麻雀和鹡鸰也是重要食物来源。</p>
+
+    <h2>保护现状</h2>
+    <p>整体种群状况良好，是中国目前最不需要担心灭绝风险的猛禽。但城市环境中鼠药（抗凝血灭鼠剂）的广泛使用导致二次中毒是值得关注的威胁——取食中毒老鼠后，红隼体内抗凝血剂累积可导致内出血死亡。推荐在城市绿化管理中采用物理/生物灭鼠方法替代化学毒饵。此外，高层建筑玻璃幕墙导致的鸟撞也是城市红隼的致死因素之一。</p>
+  </div>
+
+  <div class="infobox">
+    <div class="title">红隼</div>
+    <div class="img-wrap">
+      <img src="images/红隼.png" alt="红隼">
+      <div class="cap">红隼 AI插画</div>
+    </div>
+    <table>
+      <tr><th>界</th><td>动物界 <span class="sci">Animalia</span></td></tr>
+      <tr><th>门</th><td>脊索动物门 <span class="sci">Chordata</span></td></tr>
+      <tr><th>纲</th><td>鸟纲</td></tr>
+      <tr><th>目</th><td>隼形目</td></tr>
+      <tr><th>科</th><td>隼科</td></tr>
+      <tr><th>属</th><td><span class="sci">Falco</span></td></tr>
+      <tr><th>种</th><td><strong>红隼</strong> <span class="sci">Falco tinnunculus</span></td></tr>
+      <tr><th>英文名</th><td>Common Kestrel</td></tr>
+      <tr><th>保护级别</th><td>国家二级重点保护</td></tr>
+      <tr><th>IUCN</th><td>无危 (LC)</td></tr>
+      <tr><th>标签</th><td><span class="tag">城市猛禽</span> <span class="tag">悬停捕猎</span> <span class="tag">小型猎手</span></td></tr>
+    </table>
+  </div>
+
+</div></div>
+
+<div class="footer">
+  <div class="inner">
+    <a href="index.html" style="color:#2d6a4f">← 返回首页</a> · 红隼（<em>Falco tinnunculus</em>）· 中国动物百科
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>短耳鸮 - 动物百科</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#f5f5f5;color:#333;line-height:1.8;font-size:15px}
+  .topbar{background:#1b4332;color:#fff;padding:14px 0;font-size:13px}
+  .topbar .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+  .topbar a{color:#cde0c0;text-decoration:none}
+  .topbar a:hover{color:#fff}
+  .topbar span{color:#8aaa78;margin:0 6px}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+  .main{display:flex;gap:30px;margin-top:20px;align-items:flex-start}
+  .content{flex:1;min-width:0;background:#fff;border-radius:3px;box-shadow:0 1px 3px rgba(0,0,0,.08);padding:30px 35px}
+  .content h1{font-size:28px;font-weight:600;color:#222;margin-bottom:2px}
+  .content h1 small{font-weight:400;font-size:18px;color:#666;margin-left:8px}
+  .content .sub{color:#999;font-size:13px;margin-bottom:20px;padding-bottom:15px;border-bottom:1px solid #eee}
+  .content h2{font-size:18px;font-weight:600;color:#1b4332;margin:28px 0 12px;padding-left:12px;border-left:3px solid #2d6a4f}
+  .content p{margin:8px 0;text-indent:2em;text-align:justify}
+  .infobox{width:300px;flex-shrink:0;background:#fff;border-radius:3px;box-shadow:0 1px 3px rgba(0,0,0,.08);overflow:hidden}
+  .infobox .title{background:#1b4332;color:#fff;text-align:center;padding:12px;font-size:16px;font-weight:600;letter-spacing:1px}
+  .infobox .img-wrap{padding:12px;background:#fafafa;text-align:center;border-bottom:1px solid #eee}
+  .infobox .img-wrap img{max-width:100%;max-height:220px;display:block;margin:0 auto}
+  .infobox .img-wrap .cap{font-size:12px;color:#999;margin-top:6px}
+  .infobox table{width:100%;border-collapse:collapse;font-size:13px}
+  .infobox table th{background:#f4f7f2;padding:6px 10px;width:70px;font-weight:600;color:#444;text-align:right;border-bottom:1px solid #e8e8e8;font-size:12px;vertical-align:top}
+  .infobox table td{padding:6px 10px;border-bottom:1px solid #e8e8e8;color:#333;vertical-align:top}
+  .infobox table .sci{font-style:italic;color:#555}
+  .tag{display:inline-block;background:#eef6ea;color:#1b4332;font-size:11px;padding:1px 8px;border-radius:8px;margin:1px 2px}
+  .footer{max-width:1100px;margin:20px auto;padding:0 20px}
+  .footer .inner{background:#fff;border-radius:3px;box-shadow:0 1px 3px rgba(0,0,0,.08);padding:20px 35px;font-size:13px;color:#999;text-align:center}
+  @media(max-width:800px){.main{flex-direction:column-reverse}.infobox{width:100%}.content{padding:20px}.content h1{font-size:22px}.content h1 small{font-size:15px}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="index.html">🐾 中国动物百科</a>
+    <span>></span>
+    <a href="#">鸟纲</a>
+    <span>></span>
+    <a href="#">鸮形目</a>
+    <span>></span>
+    <strong>短耳鸮</strong>
+  </div>
+</div>
+
+<div class="wrap">
+<div class="main">
+
+  <div class="content">
+    <h1>短耳鸮 <small>Asio flammeus</small></h1>
+    <div class="sub">少数白天活动的猫头鹰 · 草原和农田的"捕鼠专家" · 中国分布最广的鸮类之一</div>
+
+    <div style="float:right;margin:0 0 12px 20px;width:280px;border:1px solid #eee;border-radius:3px;padding:8px;background:#fafafa;text-align:center">
+      <img src="images/短耳鸮.png" style="max-width:100%;max-height:200px">
+      <div style="font-size:12px;color:#999;margin-top:4px">短耳鸮 动物学插画（AI生成）</div>
+    </div>
+
+    <h2>形态特征</h2>
+    <p>中型猫头鹰，体长34-43厘米，翼展85-110厘米。上体棕褐色具暗色纵纹，下体浅色具棕色纵斑，整体呈斑驳的保护色。面盘圆而大，眼周黑色，虹膜亮黄色——是其面部最引人注目的特征。耳羽极短（多数情况下完全不可见），这是与近亲长耳鸮最直观的区别。飞行时翅膀长而宽，翅下可见明显的黑色腕斑，振翅缓而深，像大型蛾类。</p>
+
+    <h2>分布与生境</h2>
+    <p>繁殖于中国东北、内蒙古和新疆等北方地区的开阔草原和沼泽湿地。冬季迁徙至全国各地越冬，南至广东、云南。偏好开阔生境——草地、沼泽、农田和沿海湿地，极少进入密林。是猫头鹰中少数偏好开阔而非森林生境的物种。</p>
+
+    <h2>生活习性</h2>
+    <p>日行性（晨昏和白天活动），这在猫头鹰中极为罕见。飞行姿态独特——低空波浪式飞行，翼拍深而缓，常在距地面1-3米高度来回巡逻寻找猎物。主食为小型啮齿动物（田鼠占食谱80%），是控制农田鼠害的重要天敌。在地面筑巢——仅用草叶略加铺垫的浅坑，极为简陋。每窝产4-7枚卵，雌鸟孵化（约27天），雄鸟提供食物。</p>
+
+    <h2>保护现状</h2>
+    <p>冬季农田深耕翻地和机械化收割导致其冬季栖息地和地面巢穴遭到破坏。公路沿线低空飞行易被车辆撞击（路杀）。灭鼠药二次中毒也是威胁之一。在农田中放置人工栖木（T形杆）已被证明可有效吸引短耳鸮前来捕鼠，是种双赢的生态保护措施。</p>
+  </div>
+
+  <div class="infobox">
+    <div class="title">短耳鸮</div>
+    <div class="img-wrap">
+      <img src="images/短耳鸮.png" alt="短耳鸮">
+      <div class="cap">短耳鸮 AI插画</div>
+    </div>
+    <table>
+      <tr><th>界</th><td>动物界 <span class="sci">Animalia</span></td></tr>
+      <tr><th>门</th><td>脊索动物门 <span class="sci">Chordata</span></td></tr>
+      <tr><th>纲</th><td>鸟纲</td></tr>
+      <tr><th>目</th><td>鸮形目</td></tr>
+      <tr><th>科</th><td>鸱鸮科</td></tr>
+      <tr><th>属</th><td><span class="sci">Asio</span></td></tr>
+      <tr><th>种</th><td><strong>短耳鸮</strong> <span class="sci">Asio flammeus</span></td></tr>
+      <tr><th>英文名</th><td>Short-eared Owl</td></tr>
+      <tr><th>保护级别</th><td>国家二级重点保护</td></tr>
+      <tr><th>IUCN</th><td>无危 (LC)</td></tr>
+      <tr><th>标签</th><td><span class="tag">日行性猫头鹰</span> <span class="tag">地面筑巢</span> <span class="tag">鼠类天敌</span></td></tr>
+    </table>
+  </div>
+
+</div></div>
+
+<div class="footer">
+  <div class="inner">
+    <a href="index.html" style="color:#2d6a4f">← 返回首页</a> · 短耳鸮（<em>Asio flammeus</em>）· 中国动物百科
+  </div>
+</div>
+
+</body>
+</html>

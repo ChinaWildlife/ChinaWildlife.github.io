@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>秃鹫 - 动物百科</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#f5f5f5;color:#333;line-height:1.8;font-size:15px}
+  .topbar{background:#1b4332;color:#fff;padding:14px 0;font-size:13px}
+  .topbar .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+  .topbar a{color:#cde0c0;text-decoration:none}
+  .topbar a:hover{color:#fff}
+  .topbar span{color:#8aaa78;margin:0 6px}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+  .main{display:flex;gap:30px;margin-top:20px;align-items:flex-start}
+  .content{flex:1;min-width:0;background:#fff;border-radius:3px;box-shadow:0 1px 3px rgba(0,0,0,.08);padding:30px 35px}
+  .content h1{font-size:28px;font-weight:600;color:#222;margin-bottom:2px}
+  .content h1 small{font-weight:400;font-size:18px;color:#666;margin-left:8px}
+  .content .sub{color:#999;font-size:13px;margin-bottom:20px;padding-bottom:15px;border-bottom:1px solid #eee}
+  .content h2{font-size:18px;font-weight:600;color:#1b4332;margin:28px 0 12px;padding-left:12px;border-left:3px solid #2d6a4f}
+  .content p{margin:8px 0;text-indent:2em;text-align:justify}
+  .infobox{width:300px;flex-shrink:0;background:#fff;border-radius:3px;box-shadow:0 1px 3px rgba(0,0,0,.08);overflow:hidden}
+  .infobox .title{background:#1b4332;color:#fff;text-align:center;padding:12px;font-size:16px;font-weight:600;letter-spacing:1px}
+  .infobox .img-wrap{padding:12px;background:#fafafa;text-align:center;border-bottom:1px solid #eee}
+  .infobox .img-wrap img{max-width:100%;max-height:220px;display:block;margin:0 auto}
+  .infobox .img-wrap .cap{font-size:12px;color:#999;margin-top:6px}
+  .infobox table{width:100%;border-collapse:collapse;font-size:13px}
+  .infobox table th{background:#f4f7f2;padding:6px 10px;width:70px;font-weight:600;color:#444;text-align:right;border-bottom:1px solid #e8e8e8;font-size:12px;vertical-align:top}
+  .infobox table td{padding:6px 10px;border-bottom:1px solid #e8e8e8;color:#333;vertical-align:top}
+  .infobox table .sci{font-style:italic;color:#555}
+  .tag{display:inline-block;background:#eef6ea;color:#1b4332;font-size:11px;padding:1px 8px;border-radius:8px;margin:1px 2px}
+  .footer{max-width:1100px;margin:20px auto;padding:0 20px}
+  .footer .inner{background:#fff;border-radius:3px;box-shadow:0 1px 3px rgba(0,0,0,.08);padding:20px 35px;font-size:13px;color:#999;text-align:center}
+  @media(max-width:800px){.main{flex-direction:column-reverse}.infobox{width:100%}.content{padding:20px}.content h1{font-size:22px}.content h1 small{font-size:15px}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="index.html">🐾 中国动物百科</a>
+    <span>></span>
+    <a href="#">鸟纲</a>
+    <span>></span>
+    <a href="#">鹰形目</a>
+    <span>></span>
+    <strong>秃鹫</strong>
+  </div>
+</div>
+
+<div class="wrap">
+<div class="main">
+
+  <div class="content">
+    <h1>秃鹫 <small>Aegypius monachus</small></h1>
+    <div class="sub">中国最大的猛禽之一 · 翼展可达3米 · 生态系统的"清道夫"</div>
+
+    <div style="float:right;margin:0 0 12px 20px;width:280px;border:1px solid #eee;border-radius:3px;padding:8px;background:#fafafa;text-align:center">
+      <img src="images/秃鹫.png" style="max-width:100%;max-height:200px">
+      <div style="font-size:12px;color:#999;margin-top:4px">秃鹫 动物学插画（AI生成）</div>
+    </div>
+
+    <h2>形态特征</h2>
+    <p>体长100-120厘米，翼展2.5-3.1米，体重7-12.5千克，是中国体型最大的猛禽之一。全身暗褐色至黑色，头部和颈部裸露无羽，仅有稀疏的黑色绒羽——这种"秃头"是适应腐食生活的进化结果，能防止进食时血液和细菌附着。喙粗壮如钩，可轻易撕开大型动物皮毛。与高山秃鹫的主要区别在于：秃鹫体型更大，头颈部完全裸露，翼展更宽，飞行时翼指更长。</p>
+
+    <h2>分布与生境</h2>
+    <p>栖息于开阔的山地草原、荒漠和半荒漠地带。在中国主要分布于西北和青藏高原边缘地区，包括新疆、青海、甘肃、内蒙古、四川西部和西藏。常在大树顶或高耸岩石上筑巢，巢穴巨大（直径可达2米），可重复使用多年。</p>
+
+    <h2>生活习性</h2>
+    <p>以动物尸体为专一食源，是典型的腐食性猛禽。凭借极强视力（比人类锐利3-4倍）在高空盘旋，可在数公里外发现尸体。群居性，常数十只聚集在大型尸体周围共同进食。胃酸pH值接近0，可安全消化腐烂尸体中的炭疽杆菌、狂犬病病毒等致命病原体。飞行时善用上升热气流，可长时间滑翔而极少拍翅。</p>
+
+    <h2>保护现状</h2>
+    <p>因误食被毒杀的动物尸体（牧民为防狼而投放毒饵）而导致二次中毒，是秃鹫面临的最大威胁。此外，栖息地退化和传统畜牧方式改变（死畜减少）导致食物来源不足。印度次大陆因兽药双氯芬酸导致秃鹫种群崩溃99%的教训为中国敲响了警钟。中国已建立多个自然保护区保护秃鹫等腐食性猛禽。</p>
+  </div>
+
+  <div class="infobox">
+    <div class="title">秃鹫</div>
+    <div class="img-wrap">
+      <img src="images/秃鹫.png" alt="秃鹫">
+      <div class="cap">秃鹫 AI插画</div>
+    </div>
+    <table>
+      <tr><th>界</th><td>动物界 <span class="sci">Animalia</span></td></tr>
+      <tr><th>门</th><td>脊索动物门 <span class="sci">Chordata</span></td></tr>
+      <tr><th>纲</th><td>鸟纲</td></tr>
+      <tr><th>目</th><td>鹰形目</td></tr>
+      <tr><th>科</th><td>鹰科</td></tr>
+      <tr><th>属</th><td><span class="sci">Aegypius</span></td></tr>
+      <tr><th>种</th><td><strong>秃鹫</strong> <span class="sci">Aegypius monachus</span></td></tr>
+      <tr><th>英文名</th><td>Cinereous Vulture</td></tr>
+      <tr><th>保护级别</th><td>国家一级重点保护</td></tr>
+      <tr><th>IUCN</th><td>近危 (NT)</td></tr>
+      <tr><th>标签</th><td><span class="tag">大型猛禽</span> <span class="tag">翼展3米</span> <span class="tag">清道夫</span></td></tr>
+    </table>
+  </div>
+
+</div></div>
+
+<div class="footer">
+  <div class="inner">
+    <a href="index.html" style="color:#2d6a4f">← 返回首页</a> · 秃鹫（<em>Aegypius monachus</em>）· 中国动物百科
+  </div>
+</div>
+
+</body>
+</html>

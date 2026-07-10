@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>豹猫 - 动物百科</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#f5f5f5;color:#333;line-height:1.8;font-size:15px}
+  .topbar{background:#1b4332;color:#fff;padding:14px 0;font-size:13px}
+  .topbar .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+  .topbar a{color:#cde0c0;text-decoration:none}
+  .topbar a:hover{color:#fff}
+  .topbar span{color:#8aaa78;margin:0 6px}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+  .main{display:flex;gap:30px;margin-top:20px;align-items:flex-start}
+  .content{flex:1;min-width:0;background:#fff;border-radius:3px;box-shadow:0 1px 3px rgba(0,0,0,.08);padding:30px 35px}
+  .content h1{font-size:28px;font-weight:600;color:#222;margin-bottom:2px}
+  .content h1 small{font-weight:400;font-size:18px;color:#666;margin-left:8px}
+  .content .sub{color:#999;font-size:13px;margin-bottom:20px;padding-bottom:15px;border-bottom:1px solid #eee}
+  .content h2{font-size:18px;font-weight:600;color:#1b4332;margin:28px 0 12px;padding-left:12px;border-left:3px solid #2d6a4f}
+  .content p{margin:8px 0;text-indent:2em;text-align:justify}
+  .infobox{width:300px;flex-shrink:0;background:#fff;border-radius:3px;box-shadow:0 1px 3px rgba(0,0,0,.08);overflow:hidden}
+  .infobox .title{background:#1b4332;color:#fff;text-align:center;padding:12px;font-size:16px;font-weight:600;letter-spacing:1px}
+  .infobox .img-wrap{padding:12px;background:#fafafa;text-align:center;border-bottom:1px solid #eee}
+  .infobox .img-wrap img{max-width:100%;max-height:220px;display:block;margin:0 auto}
+  .infobox .img-wrap .cap{font-size:12px;color:#999;margin-top:6px}
+  .infobox table{width:100%;border-collapse:collapse;font-size:13px}
+  .infobox table th{background:#f4f7f2;padding:6px 10px;width:70px;font-weight:600;color:#444;text-align:right;border-bottom:1px solid #e8e8e8;font-size:12px;vertical-align:top}
+  .infobox table td{padding:6px 10px;border-bottom:1px solid #e8e8e8;color:#333;vertical-align:top}
+  .infobox table .sci{font-style:italic;color:#555}
+  .tag{display:inline-block;background:#eef6ea;color:#1b4332;font-size:11px;padding:1px 8px;border-radius:8px;margin:1px 2px}
+  .footer{max-width:1100px;margin:20px auto;padding:0 20px}
+  .footer .inner{background:#fff;border-radius:3px;box-shadow:0 1px 3px rgba(0,0,0,.08);padding:20px 35px;font-size:13px;color:#999;text-align:center}
+  @media(max-width:800px){.main{flex-direction:column-reverse}.infobox{width:100%}.content{padding:20px}.content h1{font-size:22px}.content h1 small{font-size:15px}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="index.html">🐾 中国动物百科</a>
+    <span>></span>
+    <a href="#">哺乳纲</a>
+    <span>></span>
+    <a href="#">食肉目</a>
+    <span>></span>
+    <strong>豹猫</strong>
+  </div>
+</div>
+
+<div class="wrap">
+<div class="main">
+
+  <div class="content">
+    <h1>豹猫 <small>Prionailurus bengalensis</small></h1>
+    <div class="sub">中国分布最广的野生猫科动物 · 美丽的斑点"小豹子" · 适应性极强</div>
+
+    <div style="float:right;margin:0 0 12px 20px;width:280px;border:1px solid #eee;border-radius:3px;padding:8px;background:#fafafa;text-align:center">
+      <img src="images/豹猫.png" style="max-width:100%;max-height:200px">
+      <div style="font-size:12px;color:#999;margin-top:4px">豹猫 动物学插画（AI生成）</div>
+    </div>
+
+    <h2>形态特征</h2>
+    <p>体型与家猫相近但更纤细优雅，体长45-75厘米（含尾23-35厘米），体重3-7千克。全身布满黑色或深褐色斑点，如同微缩版的云豹，故得"豹猫"之名。耳大而圆，耳背有明显的白色斑纹（"猫眼"）。体色从北方的浅黄灰色到南方的深黄褐色，呈现明显的地理变异梯度。四肢相对较短，尾巴粗壮，善于攀缘和跳跃。</p>
+
+    <h2>分布与生境</h2>
+    <p>栖息地类型极其多样，从东北温带森林、华北平原农区到南方亚热带丛林和海岛红树林均有分布，是适应性最强的中国猫科动物。独居夜行性，日间在岩石缝隙、树洞或茂密灌丛中休息。领地范围依食物资源丰度而异，通常1-5平方公里。</p>
+
+    <h2>生活习性</h2>
+    <p>以小型哺乳动物（鼠类、松鼠、鼩鼱）为主食，也捕食鸟类、蜥蜴、蛙类和大型昆虫。捕猎方式典型猫科——潜伏接近后突然冲刺扑杀。游泳能力较强，可穿越河流。每年繁殖1-2次，孕期约65-70天，每胎2-4仔。幼崽约10个月独立。</p>
+
+    <h2>保护现状</h2>
+    <p>20世纪因毛皮贸易被大量捕杀（豹猫皮是高档皮草原料），1989年起列入国家二级保护动物。当前主要威胁已从直接猎杀转为栖息地破碎化。南方部分区域豹猫与家猫杂交导致的基因污染是新兴的生态问题。在台湾，豹猫（石虎）已被列为濒危物种。</p>
+  </div>
+
+  <div class="infobox">
+    <div class="title">豹猫</div>
+    <div class="img-wrap">
+      <img src="images/豹猫.png" alt="豹猫">
+      <div class="cap">豹猫 AI插画</div>
+    </div>
+    <table>
+      <tr><th>界</th><td>动物界 <span class="sci">Animalia</span></td></tr>
+      <tr><th>门</th><td>脊索动物门 <span class="sci">Chordata</span></td></tr>
+      <tr><th>纲</th><td>哺乳纲</td></tr>
+      <tr><th>目</th><td>食肉目</td></tr>
+      <tr><th>科</th><td>猫科</td></tr>
+      <tr><th>属</th><td><span class="sci">Prionailurus</span></td></tr>
+      <tr><th>种</th><td><strong>豹猫</strong> <span class="sci">Prionailurus bengalensis</span></td></tr>
+      <tr><th>英文名</th><td>Leopard Cat</td></tr>
+      <tr><th>保护级别</th><td>国家二级重点保护</td></tr>
+      <tr><th>IUCN</th><td>无危 (LC)</td></tr>
+      <tr><th>标签</th><td><span class="tag">CITES附录Ⅱ</span> <span class="tag">夜行性</span> <span class="tag">广泛分布</span></td></tr>
+    </table>
+  </div>
+
+</div></div>
+
+<div class="footer">
+  <div class="inner">
+    <a href="index.html" style="color:#2d6a4f">← 返回首页</a> · 豹猫（<em>Prionailurus bengalensis</em>）· 中国动物百科
+  </div>
+</div>
+
+</body>
+</html>
